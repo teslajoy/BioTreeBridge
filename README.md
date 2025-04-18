@@ -26,30 +26,53 @@ pip install -e .
 
 ## Usage
 
+### Downloading the Schema Locally
+```bash
+# download using curl
+curl -s https://raw.githubusercontent.com/ncihtan/data-models/main/HTAN.model.jsonld > schema.json
+
+# download using wget
+wget -O schema.json https://raw.githubusercontent.com/ncihtan/data-models/main/HTAN.model.jsonld
+```
+
 ### Generate Hierarchy JSON
 
 Generate a hierarchical representation of the HTAN schema for visualization:
 
 ```bash
-# generate the full HTAN schema hierarchy
-biotreebridge schema tree --source https://raw.githubusercontent.com/ncihtan/data-models/main/HTAN.model.jsonld
+# generate a tree starting from the File node
+biotreebridge schema tree --parent File
 
-# generate just the Assay branch graph 
-biotreebridge schema tree --source https://raw.githubusercontent.com/ncihtan/data-models/main/HTAN.model.jsonld --parent "Assay"
+# include attributes in the output
+biotreebridge schema tree --parent File --include-attributes
+
+# limit the depth of the tree
+biotreebridge schema tree --parent BiologicalEntity --max-depth 2
+
+# save to a custom file
+biotreebridge schema tree --parent Sample --output sample_hierarchy.json
 ```
 
 ### Search for Schema Elements
 
 ```bash
-# search for nodes with "Assay" in the name
-biotreebridge schema search --source https://raw.githubusercontent.com/ncihtan/data-models/main/HTAN.model.jsonld --term "Assay"
+# search for nodes containing "Assay"
+biotreebridge schema search --term Assay
 
-biotreebridge schema search --source https://raw.githubusercontent.com/ncihtan/data-models/main/HTAN.model.jsonld --term "Assay" --output assay_nodes.json
+# search using the HTAN schema URL
+biotreebridge schema search --source https://raw.githubusercontent.com/ncihtan/data-models/main/HTAN.model.jsonld --term File
+
+# search and save results to a file
+biotreebridge schema search --term Imaging --output imaging_nodes.json
 ```
 
 ### List All Root Nodes
 
 ```bash
+# list all root nodes
+biotreebridge schema roots
+
+# list roots directly from the HTAN schema URL
 biotreebridge schema roots --source https://raw.githubusercontent.com/ncihtan/data-models/main/HTAN.model.jsonld
 ```
 
