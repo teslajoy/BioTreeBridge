@@ -41,16 +41,16 @@ Generate a hierarchical representation of the HTAN schema for visualization:
 
 ```bash
 # generate a tree starting from the File node
-biotreebridge schema tree --parent File
+biotreebridge schema tree --parent Assay
 
 # include attributes in the output
-biotreebridge schema tree --parent File --include-attributes
+biotreebridge schema tree --parent Assay --include-attributes
 
 # limit the depth of the tree
-biotreebridge schema tree --parent BiologicalEntity --max-depth 2
+biotreebridge schema tree --parent Assay --max-depth 2
 
 # save to a custom file
-biotreebridge schema tree --parent Sample --output sample_hierarchy.json
+biotreebridge schema tree --parent Assay --output assay_hierarchy.json
 ```
 
 ### Search for Schema Elements
