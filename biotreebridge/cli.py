@@ -23,13 +23,15 @@ def schema_commands():
 @click.option('--parent', '-p', help='Parent node to start from')
 @click.option('--max-depth', '-d', type=int, default=-1,
               help='Max depth to traverse (use -1 for no limit)')
-def generate_tree(source, output, parent, max_depth):
+@click.option('--include-attributes', '-a', is_flag=True,
+              help='Include required and dependency attributes in the output')
+def generate_tree(source, output, parent, max_depth, include_attributes):
     """generate tree hierarchy"""
-    if max_depth != -1 and max_depth < 0: # ensure max_depth is either -1 or a non-negative integer
+    if max_depth != -1 and max_depth < 0:  # ensure max_depth is either -1 or a non-negative integer
         raise click.BadParameter("max_depth must be either -1 (no limit) or a positive integer.")
 
     parser = BioThingsSchemaParser(source)
-    tree = parser.get_children_hierarchy(parent, max_depth)
+    tree = parser.get_children_hierarchy(parent, max_depth, include_attributes)
 
     with open(output, "w", encoding="utf-8") as fp:
         json.dump(tree, fp, indent=2, ensure_ascii=False)

@@ -55,7 +55,7 @@ biotreebridge schema roots --source https://raw.githubusercontent.com/ncihtan/da
 
 ## Visualization
 
-After generating the hierarchy JSON, you can view the visualizations @ https://teslajoy.github.io/biotreebridge/
+After generating the hierarchy JSON, you can view the visualizations locally via ```python -m http.server 8000``` and your localhost:8000
 
 
 ## Purpose
