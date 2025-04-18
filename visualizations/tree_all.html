@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTAN Tree (3‑Level Max)</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    html, body { width:100%; height:100%; margin:0; overflow:auto; }
+    #container { width:100%; height:100%; overflow:auto; }
+    svg { display:block; }
+    .link { fill:none; stroke:#bbb; stroke-width:1.2px; }
+    .node circle { fill:#fff; stroke:steelblue; stroke-width:1.5px; cursor:pointer; }
+    .node text { font:12px sans-serif; fill:#222; font-weight:600; pointer-events:none; }
+  </style>
+</head>
+<body>
+  <div id="container"><svg id="tree-svg"></svg></div>
+  <script>
+    const container = d3.select("#container"),
+          svg = container.select("svg"),
+          g = svg.append("g");
+
+    svg.call(d3.zoom()
+      .scaleExtent([0.1,4])
+      .on("zoom", e => g.attr("transform", e.transform))
+    );
+
+    d3.json("hierarchy.json").then(data => { // change path
+      function prune(node, depth=0) {
+        if (depth >= 2) {
+          delete node.children;
+        } else if (node.children) {
+          node.children.forEach(c => prune(c, depth+1));
+        }
+      }
+      prune(data, 0);
+
+      const root = d3.hierarchy(data, d => d.children);
+      const vGap = 30;
+      d3.tree().nodeSize([vGap,0])(root);
+
+      const charW = 7, pad = 20, maxW = {};
+      root.descendants().forEach(d => {
+        const w = d.data.id.length*charW;
+        maxW[d.depth] = Math.max(maxW[d.depth]||0, w);
+      });
+
+      const offsets = {}, hMax = root.height;
+      let cum = 0;
+      for (let d=0; d<=hMax; d++) {
+        offsets[d] = cum;
+        cum += (maxW[d]||charW*5) + pad;
+      }
+      root.descendants().forEach(d => d.y = offsets[d.depth]);
+
+      const margin = {top:50,right:50,bottom:50,left:100},
+            fullW   = (offsets[hMax]||(charW*5)) + margin.left + margin.right,
+            fullH   = d3.max(root.descendants(), d=>d.x) + margin.top + margin.bottom;
+
+      svg.attr("width",fullW).attr("height",fullH);
+      g.attr("transform",`translate(${margin.left},${margin.top})`);
+
+      g.selectAll(".link")
+        .data(root.links())
+        .join("path")
+          .attr("class","link")
+          .attr("d", d3.linkHorizontal()
+            .x(d=>d.y)
+            .y(d=>d.x)
+          );
+
+      const node = g.selectAll(".node")
+        .data(root.descendants())
+        .join("g")
+          .attr("class", d=>"node"+(d.children?" node--internal":" node--leaf"))
+          .attr("transform", d=>`translate(${d.y},${d.x})`)
+          .call(d3.drag()
+            .on("start", dragstarted)
+            .on("drag", dragged)
+            .on("end",   dragended)
+          );
+
+      node.append("circle").attr("r",6);
+      node.append("text")
+        .attr("dy",4)
+        .attr("x", d=> d.children ? -10 : 10)
+        .style("text-anchor", d=> d.children ? "end" : "start")
+        .text(d=>d.data.id);
+    });
+
+    function dragstarted(e,d){ d3.select(this).raise().attr("pointer-events","none"); }
+    function dragged(e,d)    { d3.select(this).attr("transform",`translate(${e.x},${e.y})`); }
+    function dragended(e,d)  { d3.select(this).attr("pointer-events","all"); }
+  </script>
+</body>
+</html>
+

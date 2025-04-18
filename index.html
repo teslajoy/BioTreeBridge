@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTAN Assay Tree (Interactive)</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    /* full-page scrollable container */
+    html, body {
+      width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
+    }
+    #container {
+      position: relative; width: 100%; height: 100%; overflow: hidden;
+    }
+    svg {
+      display: block; /* remove whitespace around inline SVG */
+      width: 100%;
+      height: 100%;
+    }
+    /* Branches: a softer grey tone */
+    .link {
+      fill: none;
+      stroke: #bbb;      /* lighter grey */
+      stroke-width: 1.2px;
+    }
+    /* Nodes */
+    .node circle {
+      stroke-width: 1.5px;
+      cursor: pointer;
+    }
+    /* Different colors for expandable vs leaf nodes */
+    .node--internal circle {
+      fill: steelblue;
+      stroke: #333;
+    }
+    .node--leaf circle {
+      fill: white;
+      stroke: steelblue;
+    }
+    .node--collapsed circle {
+      fill: lightblue;
+      stroke: steelblue;
+    }
+    /* Text: dark and bold for high contrast */
+    .node text {
+      font: 12px sans-serif;
+      fill: #222;        /* very dark grey/black */
+      font-weight: 600;  /* semi-bold */
+      user-select: none;
+      pointer-events: none;
+    }
+    /* Add indication of collapsed state */
+    .node--collapsed text::after {
+      content: " +";
+    }
+    /* Add loading indicator */
+    .loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: sans-serif;
+      font-size: 24px;
+      color: #666;
+    }
+    /* Highlight the focus node */
+    .node--focus circle {
+      fill: #ff9900;
+      stroke: #ff6600;
+      stroke-width: 2.5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="loading">Loading tree data...</div>
+    <svg id="tree-svg"></svg>
+  </div>
+  <script>
+  const container = d3.select("#container");
+  const svg = container.select("svg");
+  const g = svg.append("g");
+
+  const zoom = d3.zoom()
+    .scaleExtent([0.1, 4])
+    .on("zoom", event => g.attr("transform", event.transform));
+
+  svg.call(zoom);
+
+  const margin = { top: 50, right: 120, bottom: 50, left: 100 };
+  let maxLabelLength = 0;
+  const charW = 7, pad = 40;
+  const maxW = {};
+  const verticalGap = 30;
+
+  function computeNodeSizes(root) {
+    root.descendants().forEach(d => {
+      const w = d.data.id.length * charW;
+      maxW[d.depth] = Math.max(maxW[d.depth] || 0, w);
+      maxLabelLength = Math.max(maxLabelLength, d.data.id.length);
+    });
+  }
+
+  function toggleChildren(d) {
+    if (d.children) {
+      d._children = d.children;
+      d.children = null;
+    } else if (d._children) {
+      d.children = d._children;
+      d._children = null;
+    }
+    return d;
+  }
+
+  function expandToDepth(d, depth) {
+    if (d.depth < depth) {
+      if (d._children) {
+        d.children = d._children;
+        d._children = null;
+        d.children.forEach(child => expandToDepth(child, depth));
+      }
+    } else if (d.depth >= depth) {
+      if (d.children) {
+        d._children = d.children;
+        d.children = null;
+      }
+    }
+    return d;
+  }
+
+  function collapseAll(d) {
+    if (d.children) {
+      d._children = d.children;
+      d.children = null;
+      d._children.forEach(collapseAll);
+    }
+    return d;
+  }
+
+  function findNodeByPath(root, path) {
+    if (!path || path.length === 0) return root;
+
+    let currentNode = root;
+    const pathParts = Array.isArray(path) ? path : path.split('/');
+
+    for (let i = 0; i < pathParts.length; i++) {
+      const children = currentNode.children || currentNode._children;
+      if (!children) return null;
+
+      const found = children.find(child => child.data.id === pathParts[i]);
+      if (!found) return null;
+
+      currentNode = found;
+    }
+
+    return currentNode;
+  }
+
+  function expandPathToNode(root, path) {
+    let currentNode = root;
+    const pathParts = Array.isArray(path) ? path : path.split('/');
+
+    for (let i = 0; i < pathParts.length; i++) {
+      if (currentNode._children) {
+        currentNode.children = currentNode._children;
+        currentNode._children = null;
+      }
+
+      if (!currentNode.children) break;
+
+      const found = currentNode.children.find(child => child.data.id === pathParts[i]);
+      if (!found) break;
+
+      currentNode = found;
+    }
+
+    return currentNode;
+  }
+
+  function focusOnNode(node, extraSpace = 1.2) {
+    if (!node) return;
+
+    g.selectAll('.node--focus').classed('node--focus', false);
+
+    g.selectAll('.node')
+      .filter(d => d === node)
+      .classed('node--focus', true);
+
+    const containerWidth = container.node().clientWidth;
+    const containerHeight = container.node().clientHeight;
+
+    let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+
+    minX = Math.min(minX, node.y);
+    maxX = Math.max(maxX, node.y);
+    minY = Math.min(minY, node.x);
+    maxY = Math.max(maxY, node.x);
+
+    if (node.children) {
+      node.children.forEach(child => {
+        minX = Math.min(minX, child.y);
+        maxX = Math.max(maxX, child.y);
+        minY = Math.min(minY, child.x);
+        maxY = Math.max(maxY, child.x);
+      });
+    }
+
+    const paddingX = (maxX - minX) * (extraSpace - 1) / 2;
+    const paddingY = (maxY - minY) * (extraSpace - 1) / 2;
+
+    minX -= paddingX + 60;
+    maxX += paddingX + maxLabelLength * charW + 60;
+    minY -= paddingY + 40;
+    maxY += paddingY + 40;
+
+    const width = maxX - minX;
+    const height = maxY - minY;
+
+    const minSize = 200;
+    const effectiveWidth = Math.max(width, minSize);
+    const effectiveHeight = Math.max(height, minSize);
+
+    const scale = 0.9 / Math.max(
+      effectiveWidth / containerWidth,
+      effectiveHeight / containerHeight
+    );
+
+    const centerX = minX + width / 2;
+    const centerY = minY + height / 2;
+
+    const tx = containerWidth / 2 - centerX * scale;
+    const ty = containerHeight / 2 - centerY * scale;
+
+    svg.transition()
+      .duration(750)
+      .call(zoom.transform, d3.zoomIdentity
+        .translate(tx, ty)
+        .scale(scale)
+      );
+  }
+
+  function update(source) {
+    const treeLayout = d3.tree().nodeSize([verticalGap, 0]);
+    treeLayout(root);
+
+    const offsets = {};
+    let cum = 0;
+    for (let depth = 0; depth <= root.height; depth++) {
+      offsets[depth] = cum;
+      cum += (maxW[depth] || (charW * 5)) + pad;
+    }
+
+    root.descendants().forEach(d => d.y = offsets[d.depth]);
+
+    const nodes = root.descendants();
+    const links = root.links();
+
+    const link = g.selectAll(".link")
+      .data(links, d => d.target.id || (d.target.id = ++i));
+
+    const linkEnter = link.enter()
+      .append("path")
+      .attr("class", "link")
+      .attr("d", d3.linkHorizontal()
+        .x(d => source.y0 || source.y)
+        .y(d => source.x0 || source.x)
+      );
+
+    linkEnter.merge(link)
+      .transition()
+      .duration(500)
+      .attr("d", d3.linkHorizontal()
+        .x(d => d.y)
+        .y(d => d.x)
+      );
+
+    link.exit()
+      .transition()
+      .duration(500)
+      .style("opacity", 0)
+      .remove();
+
+    const node = g.selectAll(".node")
+      .data(nodes, d => d.id || (d.id = ++i));
+
+    const nodeEnter = node.enter()
+      .append("g")
+      .attr("class", d => {
+        if (d._children) return "node node--collapsed";
+        return d.children ? "node node--internal" : "node node--leaf";
+      })
+      .attr("transform", d => `translate(${source.y0 || source.y},${source.x0 || source.x})`)
+      .on("click", (event, d) => {
+        toggleChildren(d);
+        update(d);
+        setTimeout(() => focusOnNode(d), 550);
+      });
+
+    nodeEnter.append("circle")
+      .attr("r", 6);
+
+    nodeEnter.append("text")
+      .attr("dy", 4)
+      .attr("x", d => d.children || d._children ? -10 : 10)
+      .style("text-anchor", d => d.children || d._children ? "end" : "start")
+      .text(d => d.data.id);
+
+    const nodeUpdate = nodeEnter.merge(node);
+
+    nodeUpdate.transition()
+      .duration(500)
+      .attr("transform", d => `translate(${d.y},${d.x})`)
+      .attr("class", d => {
+        let classNames = d._children ? "node node--collapsed" :
+                         d.children ? "node node--internal" : "node node--leaf";
+        if (d.isFocusNode) classNames += " node--focus";
+        return classNames;
+      });
+
+    node.exit()
+      .transition()
+      .duration(500)
+      .style("opacity", 0)
+      .remove();
+
+    nodes.forEach(d => {
+      d.x0 = d.x;
+      d.y0 = d.y;
+    });
+  }
+
+  function focusInitialView() {
+    if (!root) return;
+
+    const initialFocusPath = []; // alternative: const initialFocusPath = ['firstChild']; - focus on a specific first-level child
+
+    let focusNode = root;
+    if (initialFocusPath.length > 0) {
+      focusNode = findNodeByPath(root, initialFocusPath);
+      if (!focusNode) focusNode = root;
+    }
+
+    focusNode.isFocusNode = true;
+
+    if (focusNode._children) {
+      focusNode.children = focusNode._children;
+      focusNode._children = null;
+
+      if (focusNode.children.length > 5) {
+        const visibleChildren = focusNode.children.slice(0, 5);
+        focusNode._children = focusNode.children.slice(5);
+        focusNode.children = visibleChildren;
+      }
+    }
+
+    update(focusNode);
+
+    setTimeout(() => focusOnNode(focusNode, 1.5), 100);
+  }
+
+  let i = 0;
+  let root = null;
+
+  d3.json("hierarchy.json").then(data => {
+    d3.select('.loading').style('display', 'none');
+    root = d3.hierarchy(data, d => d.children);
+    root.x0 = 0;
+    root.y0 = 0;
+
+    computeNodeSizes(root);
+    collapseAll(root);
+    expandToDepth(root, 1);
+    update(root);
+
+    setTimeout(focusInitialView, 100);
+  }).catch(error => {
+    console.error("Error loading hierarchy.json:", error);
+    d3.select('.loading').text('Error loading hierarchy.json - check console for details');
+  });
+
+  window.addEventListener('resize', () => {
+    if (root) {
+      const focusNode = root.descendants().find(d => d.isFocusNode) || root;
+      focusOnNode(focusNode, 1.5);
+    }
+  });
+  </script>
+</body>
+</html>

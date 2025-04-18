@@ -1,0 +1,5063 @@
+{
+  "id": "Assay",
+  "children": [
+    {
+      "id": "Device",
+      "children": [
+        {
+          "id": "SequencingPlatform",
+          "children": [
+            {
+              "id": "Other",
+              "children": []
+            },
+            {
+              "id": "454GSFLXTitanium",
+              "children": []
+            },
+            {
+              "id": "IlluminaGenomeAnalyzerII",
+              "children": []
+            },
+            {
+              "id": "IlluminaGenomeAnalyzerIIx",
+              "children": []
+            },
+            {
+              "id": "IlluminaHiSeq2000",
+              "children": []
+            },
+            {
+              "id": "IlluminaHiSeq2500",
+              "children": []
+            },
+            {
+              "id": "IlluminaHiSeq4000",
+              "children": []
+            },
+            {
+              "id": "IlluminaNovaSeq6000",
+              "children": []
+            },
+            {
+              "id": "IlluminaMiSeq",
+              "children": []
+            },
+            {
+              "id": "CompleteGenomics",
+              "children": []
+            },
+            {
+              "id": "PacBioRS",
+              "children": []
+            },
+            {
+              "id": "IonTorrentPGM",
+              "children": []
+            },
+            {
+              "id": "IonTorrentProton",
+              "children": []
+            },
+            {
+              "id": "IonTorrentS5",
+              "children": []
+            },
+            {
+              "id": "GridION",
+              "children": []
+            },
+            {
+              "id": "PromethION",
+              "children": []
+            },
+            {
+              "id": "IlluminaNextSeq500",
+              "children": []
+            },
+            {
+              "id": "IlluminaNextSeq550",
+              "children": []
+            },
+            {
+              "id": "IlluminaNextSeq2500",
+              "children": []
+            },
+            {
+              "id": "ABSOLiD4",
+              "children": []
+            },
+            {
+              "id": "ABSOLiD2",
+              "children": []
+            },
+            {
+              "id": "ABSOLiD3",
+              "children": []
+            },
+            {
+              "id": "IlluminaHiSeqXTen",
+              "children": []
+            },
+            {
+              "id": "IlluminaHiSeqXFive",
+              "children": []
+            },
+            {
+              "id": "IlluminaNextSeq",
+              "children": []
+            },
+            {
+              "id": "NovaSeq6000",
+              "children": []
+            },
+            {
+              "id": "NovaSeqS4",
+              "children": []
+            },
+            {
+              "id": "UltimaGenomicsUG100",
+              "children": []
+            },
+            {
+              "id": "OxfordNanoporeminION",
+              "children": []
+            },
+            {
+              "id": "PacBioSequel2",
+              "children": []
+            },
+            {
+              "id": "Revio",
+              "children": []
+            },
+            {
+              "id": "IlluminaNextSeq1000",
+              "children": []
+            },
+            {
+              "id": "IlluminaNextSeq2000",
+              "children": []
+            },
+            {
+              "id": "Unknown",
+              "children": []
+            },
+            {
+              "id": "NotReported",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Sequencing",
+      "children": [
+        {
+          "id": "CDSlibraryId",
+          "children": []
+        },
+        {
+          "id": "CDSlibraryStrategy",
+          "children": [
+            {
+              "id": "AMPLICON",
+              "children": []
+            },
+            {
+              "id": "ATAC-seq",
+              "children": []
+            },
+            {
+              "id": "Bisulfite-Seq",
+              "children": []
+            },
+            {
+              "id": "ChIA-PET",
+              "children": []
+            },
+            {
+              "id": "ChIP-Seq",
+              "children": []
+            },
+            {
+              "id": "CLONE",
+              "children": []
+            },
+            {
+              "id": "CLONEEND",
+              "children": []
+            },
+            {
+              "id": "CTS",
+              "children": []
+            },
+            {
+              "id": "DNase-Hypersensitivity",
+              "children": []
+            },
+            {
+              "id": "EST",
+              "children": []
+            },
+            {
+              "id": "FAIRE-seq",
+              "children": []
+            },
+            {
+              "id": "FINISHING",
+              "children": []
+            },
+            {
+              "id": "FL-cDNA",
+              "children": []
+            },
+            {
+              "id": "Hi-C",
+              "children": []
+            },
+            {
+              "id": "MBD-Seq",
+              "children": []
+            },
+            {
+              "id": "MeDIP-Seq",
+              "children": []
+            },
+            {
+              "id": "MiRNA-Seq",
+              "children": []
+            },
+            {
+              "id": "MNase-Seq",
+              "children": []
+            },
+            {
+              "id": "MRE-Seq",
+              "children": []
+            },
+            {
+              "id": "NcRNA-Seq",
+              "children": []
+            },
+            {
+              "id": "OTHER",
+              "children": []
+            },
+            {
+              "id": "POOLCLONE",
+              "children": []
+            },
+            {
+              "id": "RAD-Seq",
+              "children": []
+            },
+            {
+              "id": "RIP-Seq",
+              "children": []
+            },
+            {
+              "id": "RNA-Seq",
+              "children": []
+            },
+            {
+              "id": "SELEX",
+              "children": []
+            },
+            {
+              "id": "SsRNA-seq",
+              "children": []
+            },
+            {
+              "id": "Synthetic-Long-Read",
+              "children": []
+            },
+            {
+              "id": "Targeted-Capture",
+              "children": []
+            },
+            {
+              "id": "TetheredChromatinConformationCapture",
+              "children": []
+            },
+            {
+              "id": "Tn-Seq",
+              "children": []
+            },
+            {
+              "id": "WCS",
+              "children": []
+            },
+            {
+              "id": "WGA",
+              "children": []
+            },
+            {
+              "id": "WGS",
+              "children": []
+            },
+            {
+              "id": "WXS",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "CDSlibrarySource",
+          "children": [
+            {
+              "id": "OTHER",
+              "children": []
+            },
+            {
+              "id": "GENOMIC",
+              "children": []
+            },
+            {
+              "id": "GENOMICSINGLECELL",
+              "children": []
+            },
+            {
+              "id": "METAGENOMIC",
+              "children": []
+            },
+            {
+              "id": "METATRANSCRIPTOMIC",
+              "children": []
+            },
+            {
+              "id": "SYNTHETIC",
+              "children": []
+            },
+            {
+              "id": "TRANSCRIPTOMIC",
+              "children": []
+            },
+            {
+              "id": "TRANSCRIPTOMICSINGLECELL",
+              "children": []
+            },
+            {
+              "id": "VIRALRNA",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "CDSlibrarySelection",
+          "children": [
+            {
+              "id": "5-methylcytidineantibody",
+              "children": []
+            },
+            {
+              "id": "CAGE",
+              "children": []
+            },
+            {
+              "id": "CDNA",
+              "children": []
+            },
+            {
+              "id": "CDNAOligoDT",
+              "children": []
+            },
+            {
+              "id": "CDNARandomPriming",
+              "children": []
+            },
+            {
+              "id": "CF-H",
+              "children": []
+            },
+            {
+              "id": "CF-M",
+              "children": []
+            },
+            {
+              "id": "CF-S",
+              "children": []
+            },
+            {
+              "id": "CF-T",
+              "children": []
+            },
+            {
+              "id": "ChIP",
+              "children": []
+            },
+            {
+              "id": "DNAse",
+              "children": []
+            },
+            {
+              "id": "HMPR",
+              "children": []
+            },
+            {
+              "id": "HybridSelection",
+              "children": []
+            },
+            {
+              "id": "InverserRNA",
+              "children": []
+            },
+            {
+              "id": "MBD2proteinmethyl-CpGbindingdomain",
+              "children": []
+            },
+            {
+              "id": "MDA",
+              "children": []
+            },
+            {
+              "id": "MF",
+              "children": []
+            },
+            {
+              "id": "MNase",
+              "children": []
+            },
+            {
+              "id": "MSLL",
+              "children": []
+            },
+            {
+              "id": "Oligo-dT",
+              "children": []
+            },
+            {
+              "id": "Other",
+              "children": []
+            },
+            {
+              "id": "Padlockprobescapturemethod",
+              "children": []
+            },
+            {
+              "id": "PCR",
+              "children": []
+            },
+            {
+              "id": "PolyA",
+              "children": []
+            },
+            {
+              "id": "RACE",
+              "children": []
+            },
+            {
+              "id": "RANDOM",
+              "children": []
+            },
+            {
+              "id": "RANDOMPCR",
+              "children": []
+            },
+            {
+              "id": "ReducedRepresentation",
+              "children": []
+            },
+            {
+              "id": "Repeatfractionation",
+              "children": []
+            },
+            {
+              "id": "RestrictionDigest",
+              "children": []
+            },
+            {
+              "id": "RT-PCR",
+              "children": []
+            },
+            {
+              "id": "Sizefractionation",
+              "children": []
+            },
+            {
+              "id": "Unspecified",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "CDSlibraryLayout",
+          "children": [
+            {
+              "id": "Paired-end",
+              "children": []
+            },
+            {
+              "id": "Single-end",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "CDSplatform",
+          "children": [
+            {
+              "id": "LS454",
+              "children": []
+            },
+            {
+              "id": "ABISOLID",
+              "children": []
+            },
+            {
+              "id": "BGISEQ",
+              "children": []
+            },
+            {
+              "id": "CAPILLARY",
+              "children": []
+            },
+            {
+              "id": "COMPLETEGENOMICS",
+              "children": []
+            },
+            {
+              "id": "HELICOS",
+              "children": []
+            },
+            {
+              "id": "ILLUMINA",
+              "children": []
+            },
+            {
+              "id": "IONTORRENT",
+              "children": []
+            },
+            {
+              "id": "OXFORDNANOPORE",
+              "children": []
+            },
+            {
+              "id": "PACBIOSMRT",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "CDSinstrumentModel",
+          "children": [
+            {
+              "id": "454GS",
+              "children": []
+            },
+            {
+              "id": "454GS20",
+              "children": []
+            },
+            {
+              "id": "454GSFLX",
+              "children": []
+            },
+            {
+              "id": "454GSFLX+",
+              "children": []
+            },
+            {
+              "id": "454GSFLXTitanium",
+              "children": []
+            },
+            {
+              "id": "454GSJunior",
+              "children": []
+            },
+            {
+              "id": "HiSeqXFive",
+              "children": []
+            },
+            {
+              "id": "HiSeqXTen",
+              "children": []
+            },
+            {
+              "id": "IlluminaGenomeAnalyzer",
+              "children": []
+            },
+            {
+              "id": "IlluminaGenomeAnalyzerII",
+              "children": []
+            },
+            {
+              "id": "IlluminaGenomeAnalyzerIIx",
+              "children": []
+            },
+            {
+              "id": "IlluminaHiScanSQ",
+              "children": []
+            },
+            {
+              "id": "IlluminaHiSeq1000",
+              "children": []
+            },
+            {
+              "id": "IlluminaHiSeq1500",
+              "children": []
+            },
+            {
+              "id": "IlluminaHiSeq2000",
+              "children": []
+            },
+            {
+              "id": "IlluminaHiSeq2500",
+              "children": []
+            },
+            {
+              "id": "IlluminaHiSeq3000",
+              "children": []
+            },
+            {
+              "id": "IlluminaHiSeq4000",
+              "children": []
+            },
+            {
+              "id": "IlluminaiSeq100",
+              "children": []
+            },
+            {
+              "id": "IlluminaNovaSeq6000",
+              "children": []
+            },
+            {
+              "id": "IlluminaMiniSeq",
+              "children": []
+            },
+            {
+              "id": "IlluminaMiSeq",
+              "children": []
+            },
+            {
+              "id": "NextSeq500",
+              "children": []
+            },
+            {
+              "id": "NextSeq550",
+              "children": []
+            },
+            {
+              "id": "HelicosHeliScope",
+              "children": []
+            },
+            {
+              "id": "AB5500GeneticAnalyzer",
+              "children": []
+            },
+            {
+              "id": "AB5500xlGeneticAnalyzer",
+              "children": []
+            },
+            {
+              "id": "AB5500x-WlGeneticAnalyzer",
+              "children": []
+            },
+            {
+              "id": "ABSOLiD3PlusSystem",
+              "children": []
+            },
+            {
+              "id": "ABSOLiD4System",
+              "children": []
+            },
+            {
+              "id": "ABSOLiD4hqSystem",
+              "children": []
+            },
+            {
+              "id": "ABSOLiDPISystem",
+              "children": []
+            },
+            {
+              "id": "ABSOLiDSystem",
+              "children": []
+            },
+            {
+              "id": "ABSOLiDSystem2.0",
+              "children": []
+            },
+            {
+              "id": "ABSOLiDSystem3.0",
+              "children": []
+            },
+            {
+              "id": "CompleteGenomics",
+              "children": []
+            },
+            {
+              "id": "PacBioRS",
+              "children": []
+            },
+            {
+              "id": "PacBioRSII",
+              "children": []
+            },
+            {
+              "id": "PacBioSequel",
+              "children": []
+            },
+            {
+              "id": "PacBioSequelII",
+              "children": []
+            },
+            {
+              "id": "IonTorrentPGM",
+              "children": []
+            },
+            {
+              "id": "IonTorrentProton",
+              "children": []
+            },
+            {
+              "id": "IonTorrentS5XL",
+              "children": []
+            },
+            {
+              "id": "IonTorrentS5",
+              "children": []
+            },
+            {
+              "id": "AB310GeneticAnalyzer",
+              "children": []
+            },
+            {
+              "id": "AB3130GeneticAnalyzer",
+              "children": []
+            },
+            {
+              "id": "AB3130xLGeneticAnalyzer",
+              "children": []
+            },
+            {
+              "id": "AB3500GeneticAnalyzer",
+              "children": []
+            },
+            {
+              "id": "AB3500xLGeneticAnalyzer",
+              "children": []
+            },
+            {
+              "id": "AB3730GeneticAnalyzer",
+              "children": []
+            },
+            {
+              "id": "AB3730xLGeneticAnalyzer",
+              "children": []
+            },
+            {
+              "id": "GridION",
+              "children": []
+            },
+            {
+              "id": "MinION",
+              "children": []
+            },
+            {
+              "id": "PromethION",
+              "children": []
+            },
+            {
+              "id": "BGISEQ-500",
+              "children": []
+            },
+            {
+              "id": "DNBSEQ-G400",
+              "children": []
+            },
+            {
+              "id": "DNBSEQ-T7",
+              "children": []
+            },
+            {
+              "id": "DNBSEQ-G50",
+              "children": []
+            },
+            {
+              "id": "MGISEQ-2000RS",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "CDSdesignDescription",
+          "children": []
+        },
+        {
+          "id": "CDSreferenceGenomeAssembly",
+          "children": []
+        },
+        {
+          "id": "CDScustomAssemblyFastaFileForAlignment",
+          "children": []
+        },
+        {
+          "id": "CDSbases",
+          "children": []
+        },
+        {
+          "id": "CDSnumberOfReads",
+          "children": []
+        },
+        {
+          "id": "CDScoverage",
+          "children": []
+        },
+        {
+          "id": "CDSavgReadLength",
+          "children": []
+        },
+        {
+          "id": "CDSsequenceAlignmentSoftware",
+          "children": []
+        },
+        {
+          "id": "CDNA",
+          "children": []
+        },
+        {
+          "id": "ScRNA-seqLevel1",
+          "children": [
+            {
+              "id": "CryopreservedCellsinSample",
+              "children": [
+                {
+                  "id": "Yes",
+                  "children": []
+                },
+                {
+                  "id": "No",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "SingleCellIsolationMethod",
+              "children": [
+                {
+                  "id": "MicrofluidicsChip",
+                  "children": []
+                },
+                {
+                  "id": "Droplets",
+                  "children": []
+                },
+                {
+                  "id": "FACS",
+                  "children": []
+                },
+                {
+                  "id": "Plates",
+                  "children": []
+                },
+                {
+                  "id": "10x",
+                  "children": []
+                },
+                {
+                  "id": "NucleiIsolation",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "DissociationMethod",
+              "children": [
+                {
+                  "id": "NotApplicable",
+                  "children": []
+                },
+                {
+                  "id": "GentleMACS",
+                  "children": []
+                },
+                {
+                  "id": "Dounce",
+                  "children": []
+                },
+                {
+                  "id": "EnzymaticDigestion",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "Read1",
+              "children": [
+                {
+                  "id": "CDNA",
+                  "children": []
+                },
+                {
+                  "id": "CellBarcodeandUMI",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "Read2",
+              "children": [
+                {
+                  "id": "CDNA",
+                  "children": []
+                },
+                {
+                  "id": "CellBarcodeandUMI",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "EndBias",
+              "children": [
+                {
+                  "id": "3Prime",
+                  "children": []
+                },
+                {
+                  "id": "5Prime",
+                  "children": []
+                },
+                {
+                  "id": "FullLengthTranscript",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "ReverseTranscriptionPrimer",
+              "children": [
+                {
+                  "id": "Oligo-dT",
+                  "children": []
+                },
+                {
+                  "id": "Poly-dT",
+                  "children": []
+                },
+                {
+                  "id": "Featurebarcoding",
+                  "children": []
+                },
+                {
+                  "id": "Random",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "SpikeIn",
+              "children": [
+                {
+                  "id": "ERCC",
+                  "children": [
+                    {
+                      "id": "SpikeInConcentration",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "OtherSpikeIn",
+                  "children": []
+                },
+                {
+                  "id": "NoSpikeIn",
+                  "children": []
+                },
+                {
+                  "id": "PhiX",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "InputCellsandNuclei",
+              "children": []
+            },
+            {
+              "id": "SingleCellDissociationDaysfromIndex",
+              "children": []
+            },
+            {
+              "id": "EmptyWellBarcode",
+              "children": []
+            },
+            {
+              "id": "WellIndex",
+              "children": [
+                {
+                  "id": "Yes",
+                  "children": []
+                },
+                {
+                  "id": "No",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "FeatureReferenceId",
+              "children": []
+            },
+            {
+              "id": "UMIBarcodeOffset",
+              "children": []
+            },
+            {
+              "id": "UMIBarcodeLength",
+              "children": []
+            },
+            {
+              "id": "CellBarcodeandUMI",
+              "children": []
+            },
+            {
+              "id": "MedianUMIsperCellNumber",
+              "children": []
+            },
+            {
+              "id": "CellBarcodeOffset",
+              "children": []
+            },
+            {
+              "id": "CellBarcodeLength",
+              "children": []
+            },
+            {
+              "id": "ValidBarcodesCellNumber",
+              "children": []
+            },
+            {
+              "id": "CEL-seq2",
+              "children": []
+            },
+            {
+              "id": "Featurebarcoding",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "NucleicAcidSource",
+          "children": [
+            {
+              "id": "SingleCell",
+              "children": []
+            },
+            {
+              "id": "BulkWholeCell",
+              "children": []
+            },
+            {
+              "id": "SingleNucleus",
+              "children": []
+            },
+            {
+              "id": "BulkNuclei",
+              "children": []
+            },
+            {
+              "id": "Micro-region",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "LibraryConstructionMethod",
+          "children": [
+            {
+              "id": "Smart-seq2",
+              "children": []
+            },
+            {
+              "id": "Smart-SeqV4",
+              "children": []
+            },
+            {
+              "id": "10xV1.0",
+              "children": []
+            },
+            {
+              "id": "10xV1.1",
+              "children": []
+            },
+            {
+              "id": "10xV2",
+              "children": []
+            },
+            {
+              "id": "10xV3",
+              "children": []
+            },
+            {
+              "id": "10xV3.1",
+              "children": []
+            },
+            {
+              "id": "Drop-seq",
+              "children": []
+            },
+            {
+              "id": "InDropsV2",
+              "children": []
+            },
+            {
+              "id": "InDropsV3",
+              "children": []
+            },
+            {
+              "id": "TruDrop",
+              "children": []
+            },
+            {
+              "id": "NexteraXT",
+              "children": []
+            },
+            {
+              "id": "CEL-seq2",
+              "children": []
+            },
+            {
+              "id": "Sci-ATAC-seq",
+              "children": []
+            },
+            {
+              "id": "10xMultiome",
+              "children": []
+            },
+            {
+              "id": "10xFLEX",
+              "children": []
+            },
+            {
+              "id": "10xGEM3'",
+              "children": []
+            },
+            {
+              "id": "10xGEM5'",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "ReadIndicator",
+          "children": [
+            {
+              "id": "Other",
+              "children": []
+            },
+            {
+              "id": "R1",
+              "children": []
+            },
+            {
+              "id": "R2",
+              "children": []
+            },
+            {
+              "id": "R1&R2",
+              "children": []
+            },
+            {
+              "id": "I1",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "TotalNumberofInputCells",
+          "children": []
+        },
+        {
+          "id": "LibraryPreparationDaysfromIndex",
+          "children": []
+        },
+        {
+          "id": "SequencingLibraryConstructionDaysfromIndex",
+          "children": []
+        },
+        {
+          "id": "NucleicAcidCaptureDaysfromIndex",
+          "children": []
+        },
+        {
+          "id": "TechnicalReplicateGroup",
+          "children": []
+        },
+        {
+          "id": "ScRNA-seqLevel2",
+          "children": [
+            {
+              "id": "Islowestlevel",
+              "children": [
+                {
+                  "id": "No",
+                  "children": []
+                },
+                {
+                  "id": "Yes-Islowestlevel",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "Yes-Islowestlevel",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "ScRNAseqWorkflowType",
+          "children": [
+            {
+              "id": "Other",
+              "children": []
+            },
+            {
+              "id": "CellRanger",
+              "children": []
+            },
+            {
+              "id": "STARsolo",
+              "children": []
+            },
+            {
+              "id": "HCAOptimus",
+              "children": []
+            },
+            {
+              "id": "DropEST",
+              "children": []
+            },
+            {
+              "id": "SEQC",
+              "children": []
+            },
+            {
+              "id": "Cufflinks",
+              "children": []
+            },
+            {
+              "id": "DEXSeq",
+              "children": []
+            },
+            {
+              "id": "HTSeq-FPKM",
+              "children": []
+            },
+            {
+              "id": "Cellannotation",
+              "children": []
+            },
+            {
+              "id": "Differentiationtrajectoryanalysis",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "WorkflowVersion",
+          "children": []
+        },
+        {
+          "id": "ScRNAseqWorkflowParametersDescription",
+          "children": []
+        },
+        {
+          "id": "WorkflowLink",
+          "children": []
+        },
+        {
+          "id": "GenomicReference",
+          "children": []
+        },
+        {
+          "id": "GenomicReferenceURL",
+          "children": []
+        },
+        {
+          "id": "GenomeAnnotationURL",
+          "children": []
+        },
+        {
+          "id": "WhitelistCellBarcodeFileLink",
+          "children": []
+        },
+        {
+          "id": "CellBarcodeTag",
+          "children": []
+        },
+        {
+          "id": "UMITag",
+          "children": []
+        },
+        {
+          "id": "AppliedHardTrimming",
+          "children": [
+            {
+              "id": "No",
+              "children": []
+            },
+            {
+              "id": "Yes-AppliedHardTrimming",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "ScRNA-seqLevel3",
+          "children": [
+            {
+              "id": "CellMedianNumberReads",
+              "children": []
+            },
+            {
+              "id": "CellMedianNumberGenes",
+              "children": []
+            },
+            {
+              "id": "CellTotal",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "DataCategory",
+          "children": [
+            {
+              "id": "Other",
+              "children": []
+            },
+            {
+              "id": "GeneExpression",
+              "children": []
+            },
+            {
+              "id": "TranscriptExpression",
+              "children": []
+            },
+            {
+              "id": "ExonExpressionQuantification",
+              "children": []
+            },
+            {
+              "id": "GeneExpressionQuantification",
+              "children": []
+            },
+            {
+              "id": "IsoformExpressionQuantification",
+              "children": []
+            },
+            {
+              "id": "SpliceJunctionQuantification",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "MatrixType",
+          "children": [
+            {
+              "id": "RawCounts",
+              "children": []
+            },
+            {
+              "id": "NormalizedCounts",
+              "children": []
+            },
+            {
+              "id": "ScaledCounts",
+              "children": []
+            },
+            {
+              "id": "BatchCorrectedCounts",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "LinkedMatrices",
+          "children": []
+        },
+        {
+          "id": "ScRNA-seqLevel4",
+          "children": []
+        },
+        {
+          "id": "SequencingBatchID",
+          "children": []
+        },
+        {
+          "id": "BulkRNA-seqLevel1",
+          "children": []
+        },
+        {
+          "id": "LibraryLayout",
+          "children": [
+            {
+              "id": "PairedEnd",
+              "children": []
+            },
+            {
+              "id": "SingleRead",
+              "children": []
+            },
+            {
+              "id": "Mid-length",
+              "children": []
+            },
+            {
+              "id": "LongRead",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "Micro-regionSeqPlatform",
+          "children": [
+            {
+              "id": "RarecytePick-Seq",
+              "children": []
+            },
+            {
+              "id": "LaserCaptureMicrodissection",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "ROITag",
+          "children": []
+        },
+        {
+          "id": "ReadLength",
+          "children": []
+        },
+        {
+          "id": "LibrarySelectionMethod",
+          "children": [
+            {
+              "id": "HybridSelection",
+              "children": []
+            },
+            {
+              "id": "Other",
+              "children": []
+            },
+            {
+              "id": "PCR",
+              "children": []
+            },
+            {
+              "id": "Random",
+              "children": []
+            },
+            {
+              "id": "AffinityEnrichment",
+              "children": []
+            },
+            {
+              "id": "Poly-TEnrichment",
+              "children": []
+            },
+            {
+              "id": "RRNADepletion",
+              "children": []
+            },
+            {
+              "id": "MiRNASizeFractionation",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "LibraryPreparationKitName",
+          "children": []
+        },
+        {
+          "id": "LibraryPreparationKitVendor",
+          "children": []
+        },
+        {
+          "id": "LibraryPreparationKitVersion",
+          "children": []
+        },
+        {
+          "id": "AdapterName",
+          "children": []
+        },
+        {
+          "id": "AdapterSequence",
+          "children": []
+        },
+        {
+          "id": "BaseCallerName",
+          "children": []
+        },
+        {
+          "id": "BaseCallerVersion",
+          "children": []
+        },
+        {
+          "id": "FlowCellBarcode",
+          "children": []
+        },
+        {
+          "id": "FragmentMaximumLength",
+          "children": []
+        },
+        {
+          "id": "FragmentMeanLength",
+          "children": []
+        },
+        {
+          "id": "FragmentMinimumLength",
+          "children": []
+        },
+        {
+          "id": "FragmentStandardDeviationLength",
+          "children": []
+        },
+        {
+          "id": "LaneNumber",
+          "children": []
+        },
+        {
+          "id": "LibraryStrand",
+          "children": [
+            {
+              "id": "NotApplicable",
+              "children": []
+            },
+            {
+              "id": "Unstranded",
+              "children": []
+            },
+            {
+              "id": "FirstStranded",
+              "children": []
+            },
+            {
+              "id": "SecondStranded",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "MultiplexBarcode",
+          "children": []
+        },
+        {
+          "id": "SizeSelectionRange",
+          "children": []
+        },
+        {
+          "id": "TargetDepth",
+          "children": []
+        },
+        {
+          "id": "ToTrimAdapterSequence",
+          "children": [
+            {
+              "id": "No",
+              "children": []
+            },
+            {
+              "id": "Yes-TrimAdapterSequence",
+              "children": [
+                {
+                  "id": "AdapterTrimmerName",
+                  "children": []
+                },
+                {
+                  "id": "AdapterTrimmerVersion",
+                  "children": []
+                },
+                {
+                  "id": "AdapterTrimmerOptions",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "TranscriptIntegrityNumber",
+          "children": []
+        },
+        {
+          "id": "RIN",
+          "children": []
+        },
+        {
+          "id": "DV200",
+          "children": []
+        },
+        {
+          "id": "AdapterContent",
+          "children": [
+            {
+              "id": "Unknown",
+              "children": []
+            },
+            {
+              "id": "NotReported",
+              "children": []
+            },
+            {
+              "id": "FAIL",
+              "children": []
+            },
+            {
+              "id": "PASS",
+              "children": []
+            },
+            {
+              "id": "WARN",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "BasicStatistics",
+          "children": [
+            {
+              "id": "Unknown",
+              "children": []
+            },
+            {
+              "id": "NotReported",
+              "children": []
+            },
+            {
+              "id": "FAIL",
+              "children": []
+            },
+            {
+              "id": "PASS",
+              "children": []
+            },
+            {
+              "id": "WARN",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "Encoding",
+          "children": []
+        },
+        {
+          "id": "KmerContent",
+          "children": [
+            {
+              "id": "Unknown",
+              "children": []
+            },
+            {
+              "id": "NotReported",
+              "children": []
+            },
+            {
+              "id": "FAIL",
+              "children": []
+            },
+            {
+              "id": "PASS",
+              "children": []
+            },
+            {
+              "id": "WARN",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "OverrepresentedSequences",
+          "children": [
+            {
+              "id": "Unknown",
+              "children": []
+            },
+            {
+              "id": "NotReported",
+              "children": []
+            },
+            {
+              "id": "FAIL",
+              "children": []
+            },
+            {
+              "id": "PASS",
+              "children": []
+            },
+            {
+              "id": "WARN",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "PerBaseNContent",
+          "children": [
+            {
+              "id": "Unknown",
+              "children": []
+            },
+            {
+              "id": "NotReported",
+              "children": []
+            },
+            {
+              "id": "FAIL",
+              "children": []
+            },
+            {
+              "id": "PASS",
+              "children": []
+            },
+            {
+              "id": "WARN",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "PerBaseSequenceContent",
+          "children": [
+            {
+              "id": "Unknown",
+              "children": []
+            },
+            {
+              "id": "NotReported",
+              "children": []
+            },
+            {
+              "id": "FAIL",
+              "children": []
+            },
+            {
+              "id": "PASS",
+              "children": []
+            },
+            {
+              "id": "WARN",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "PerBaseSequenceQuality",
+          "children": [
+            {
+              "id": "Unknown",
+              "children": []
+            },
+            {
+              "id": "NotReported",
+              "children": []
+            },
+            {
+              "id": "FAIL",
+              "children": []
+            },
+            {
+              "id": "PASS",
+              "children": []
+            },
+            {
+              "id": "WARN",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "PerSequenceGCContent",
+          "children": [
+            {
+              "id": "Unknown",
+              "children": []
+            },
+            {
+              "id": "NotReported",
+              "children": []
+            },
+            {
+              "id": "FAIL",
+              "children": []
+            },
+            {
+              "id": "PASS",
+              "children": []
+            },
+            {
+              "id": "WARN",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "PerSequenceQualityScore",
+          "children": [
+            {
+              "id": "Unknown",
+              "children": []
+            },
+            {
+              "id": "NotReported",
+              "children": []
+            },
+            {
+              "id": "FAIL",
+              "children": []
+            },
+            {
+              "id": "PASS",
+              "children": []
+            },
+            {
+              "id": "WARN",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "PerTileSequenceQuality",
+          "children": [
+            {
+              "id": "Unknown",
+              "children": []
+            },
+            {
+              "id": "NotReported",
+              "children": []
+            },
+            {
+              "id": "FAIL",
+              "children": []
+            },
+            {
+              "id": "PASS",
+              "children": []
+            },
+            {
+              "id": "WARN",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "PercentGCContent",
+          "children": []
+        },
+        {
+          "id": "SequenceDuplicationLevels",
+          "children": [
+            {
+              "id": "Unknown",
+              "children": []
+            },
+            {
+              "id": "NotReported",
+              "children": []
+            },
+            {
+              "id": "FAIL",
+              "children": []
+            },
+            {
+              "id": "PASS",
+              "children": []
+            },
+            {
+              "id": "WARN",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "SequenceLengthDistribution",
+          "children": [
+            {
+              "id": "Unknown",
+              "children": []
+            },
+            {
+              "id": "NotReported",
+              "children": []
+            },
+            {
+              "id": "FAIL",
+              "children": []
+            },
+            {
+              "id": "PASS",
+              "children": []
+            },
+            {
+              "id": "WARN",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "TotalReads",
+          "children": []
+        },
+        {
+          "id": "QCWorkflowType",
+          "children": []
+        },
+        {
+          "id": "QCWorkflowVersion",
+          "children": []
+        },
+        {
+          "id": "QCWorkflowLink",
+          "children": []
+        },
+        {
+          "id": "BulkRNA-seqLevel2",
+          "children": []
+        },
+        {
+          "id": "AlignmentWorkflowUrl",
+          "children": []
+        },
+        {
+          "id": "AlignmentWorkflowType",
+          "children": [
+            {
+              "id": "None",
+              "children": []
+            },
+            {
+              "id": "BWA",
+              "children": []
+            },
+            {
+              "id": "BWAwithBQSR",
+              "children": []
+            },
+            {
+              "id": "BWA-aln",
+              "children": []
+            },
+            {
+              "id": "BWA-mem",
+              "children": []
+            },
+            {
+              "id": "BWAwithMarkDuplicatesandBQSR",
+              "children": []
+            },
+            {
+              "id": "STAR2-Pass",
+              "children": []
+            },
+            {
+              "id": "STAR2-PassChimeric",
+              "children": []
+            },
+            {
+              "id": "STAR2-PassGenome",
+              "children": []
+            },
+            {
+              "id": "STAR2-PassTranscriptome",
+              "children": []
+            },
+            {
+              "id": "Bowtie",
+              "children": []
+            },
+            {
+              "id": "Bismark",
+              "children": []
+            },
+            {
+              "id": "GSNAP",
+              "children": []
+            },
+            {
+              "id": "BSMAP",
+              "children": []
+            },
+            {
+              "id": "BSmooth",
+              "children": []
+            },
+            {
+              "id": "BS-Seeker2",
+              "children": []
+            },
+            {
+              "id": "BS-Seeker",
+              "children": []
+            },
+            {
+              "id": "RMAP",
+              "children": []
+            },
+            {
+              "id": "MethylCoder",
+              "children": []
+            },
+            {
+              "id": "BRAT-BW",
+              "children": []
+            },
+            {
+              "id": "Pash",
+              "children": []
+            },
+            {
+              "id": "Segemehl",
+              "children": []
+            },
+            {
+              "id": "Bisulfighter",
+              "children": []
+            },
+            {
+              "id": "BatMeth",
+              "children": []
+            },
+            {
+              "id": "LAST",
+              "children": []
+            },
+            {
+              "id": "ERNE-BS5",
+              "children": []
+            },
+            {
+              "id": "B-SOLANA",
+              "children": []
+            },
+            {
+              "id": "SOCS-B",
+              "children": []
+            },
+            {
+              "id": "BWA-meth",
+              "children": []
+            },
+            {
+              "id": "OtherAlignmentWorkflow",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "IndexFileName",
+          "children": []
+        },
+        {
+          "id": "AverageBaseQuality",
+          "children": []
+        },
+        {
+          "id": "AverageInsertSize",
+          "children": []
+        },
+        {
+          "id": "AverageReadLength",
+          "children": []
+        },
+        {
+          "id": "Contamination",
+          "children": []
+        },
+        {
+          "id": "ContaminationError",
+          "children": []
+        },
+        {
+          "id": "MeanCoverage",
+          "children": []
+        },
+        {
+          "id": "MSIWorkflowLink",
+          "children": []
+        },
+        {
+          "id": "MSIScore",
+          "children": []
+        },
+        {
+          "id": "MSIStatus",
+          "children": [
+            {
+              "id": "MSI",
+              "children": []
+            },
+            {
+              "id": "MSI-low",
+              "children": []
+            },
+            {
+              "id": "MSI-high",
+              "children": []
+            },
+            {
+              "id": "MSS",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "PairsOnDiffCHR",
+          "children": []
+        },
+        {
+          "id": "TotalUniquelyMapped",
+          "children": []
+        },
+        {
+          "id": "TotalUnmappedreads",
+          "children": []
+        },
+        {
+          "id": "ProportionReadsDuplicated",
+          "children": []
+        },
+        {
+          "id": "ProportionReadsMapped",
+          "children": []
+        },
+        {
+          "id": "ProportionTargetsNoCoverage",
+          "children": []
+        },
+        {
+          "id": "ProportionBaseMismatch",
+          "children": []
+        },
+        {
+          "id": "ShortReads",
+          "children": []
+        },
+        {
+          "id": "BulkRNA-seqLevel3",
+          "children": []
+        },
+        {
+          "id": "PseudoAlignmentUsed",
+          "children": [
+            {
+              "id": "No",
+              "children": []
+            },
+            {
+              "id": "Yes-PseudoAlignmentUsed",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "ExpressionUnits",
+          "children": [
+            {
+              "id": "Other",
+              "children": []
+            },
+            {
+              "id": "TPM",
+              "children": []
+            },
+            {
+              "id": "RPKM",
+              "children": []
+            },
+            {
+              "id": "FPKM",
+              "children": []
+            },
+            {
+              "id": "Counts",
+              "children": []
+            },
+            {
+              "id": "NA",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "FusionGeneDetected",
+          "children": [
+            {
+              "id": "No",
+              "children": []
+            },
+            {
+              "id": "Unknown",
+              "children": []
+            },
+            {
+              "id": "Yes-FusionGeneDetected",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "FusionGeneIdentity",
+          "children": [
+            {
+              "id": "EWS-FLI",
+              "children": []
+            },
+            {
+              "id": "EWS-ERG",
+              "children": []
+            },
+            {
+              "id": "SYT-SSX1",
+              "children": []
+            },
+            {
+              "id": "SYT-SSX2",
+              "children": []
+            },
+            {
+              "id": "EWS-WT1",
+              "children": []
+            },
+            {
+              "id": "OtherFusionGene",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "BulkWESLevel1",
+          "children": []
+        },
+        {
+          "id": "TargetCaptureKit",
+          "children": [
+            {
+              "id": "NotApplicable",
+              "children": []
+            },
+            {
+              "id": "Unknown",
+              "children": []
+            },
+            {
+              "id": "CustomTargetsFileProvided",
+              "children": []
+            },
+            {
+              "id": "CustomAmpliSeqCancerHotspotGENIE-MDAAugmentedPanelv1-46Genes",
+              "children": []
+            },
+            {
+              "id": "CustomGENIE-DFCIOncoPanel-275Genes",
+              "children": []
+            },
+            {
+              "id": "CustomGENIE-DFCIOncopanel-300Genes",
+              "children": []
+            },
+            {
+              "id": "CustomGENIE-DFCIOncopanel-447Genes",
+              "children": []
+            },
+            {
+              "id": "CustomHaloPlexDLBCLPanel-370Genes",
+              "children": []
+            },
+            {
+              "id": "CustomIonAmpliSeqHotspotGENIE-MOSC3AugmentedPanel-74Genes",
+              "children": []
+            },
+            {
+              "id": "CustomLargeConstructCaptureTARGET-OSPanel-8Genes",
+              "children": []
+            },
+            {
+              "id": "CustomMSKIMPACTPanel-341Genes",
+              "children": []
+            },
+            {
+              "id": "CustomMSKIMPACTPanel-410Genes",
+              "children": []
+            },
+            {
+              "id": "CustomMSKIMPACTPanel-468Genes",
+              "children": []
+            },
+            {
+              "id": "CustomMyeloidGENIE-VICCPanel-37Genes",
+              "children": []
+            },
+            {
+              "id": "CustomPersonalisACEcpVAREPOP-APOLLOPanelv2",
+              "children": []
+            },
+            {
+              "id": "CustomPGDXSureSelectCancerSelectVAREPOP-APOLLOPanel-203Genes",
+              "children": []
+            },
+            {
+              "id": "CustomPGDXSureSelectCancerSelectVAREPOP-APOLLOPanel-88Genes",
+              "children": []
+            },
+            {
+              "id": "CustomSeqCapEZHGSCVCRomev2.1ERAugmentedv1",
+              "children": []
+            },
+            {
+              "id": "CustomSeqCapEZHGSCVCRomev2.1ERAugmentedv2",
+              "children": []
+            },
+            {
+              "id": "CustomSeqCapEZTARGET-OSPanel-7.0Mb",
+              "children": []
+            },
+            {
+              "id": "CustomSolidTumorGENIE-VICCPanel-34Genes",
+              "children": []
+            },
+            {
+              "id": "CustomSureSelectCGCI-BLGSPPanel-4.6Mb",
+              "children": []
+            },
+            {
+              "id": "CustomSureSelectCGCI-HTMCP-CCKMT2DAndHotspotPanel-37.0Kb",
+              "children": []
+            },
+            {
+              "id": "CustomSureSelectCGCI-HTMCP-CCPanel-19.7Mb",
+              "children": []
+            },
+            {
+              "id": "CustomSureSelectGENIE-UHNPanel-555Genes",
+              "children": []
+            },
+            {
+              "id": "CustomSureSelectHumanAllExonv1.1Plus3Boosters",
+              "children": []
+            },
+            {
+              "id": "CustomSureSelectTARGET-AMLNBLWTPanel-2.8Mb",
+              "children": []
+            },
+            {
+              "id": "CustomTwistBroadExomev1.0-35.0Mb",
+              "children": []
+            },
+            {
+              "id": "CustomTwistBroadPanCancerPanel-396Genes",
+              "children": []
+            },
+            {
+              "id": "FoundationMedicineT5aPanel-322Genes",
+              "children": []
+            },
+            {
+              "id": "FoundationMedicineT7Panel-429Genes",
+              "children": []
+            },
+            {
+              "id": "IonAmpliSeqCancerHotspotPanelv2",
+              "children": []
+            },
+            {
+              "id": "IonAmpliSeqComprehensiveCancerPanel",
+              "children": []
+            },
+            {
+              "id": "NexteraDNAExome",
+              "children": []
+            },
+            {
+              "id": "NexteraRapidCaptureExomev1.2",
+              "children": []
+            },
+            {
+              "id": "SeqCapEZHGSCVCRomev2.1",
+              "children": []
+            },
+            {
+              "id": "SeqCapEZHumanExomev2.0",
+              "children": []
+            },
+            {
+              "id": "SeqCapEZHumanExomev3.0",
+              "children": []
+            },
+            {
+              "id": "SureSelectHumanAllExonv3",
+              "children": []
+            },
+            {
+              "id": "SureSelectHumanAllExonv4",
+              "children": []
+            },
+            {
+              "id": "SureSelectHumanAllExonv5",
+              "children": []
+            },
+            {
+              "id": "SureSelectHumanAllExonv5+UTR",
+              "children": []
+            },
+            {
+              "id": "TruSeqAmpliconCancerPanel",
+              "children": []
+            },
+            {
+              "id": "TruSeqExomeEnrichment-62Mb",
+              "children": []
+            },
+            {
+              "id": "TruSeqRNAExome",
+              "children": []
+            },
+            {
+              "id": "TruSightMyeloidSequencingPanel",
+              "children": []
+            },
+            {
+              "id": "XGenExomeResearchPanelv1.0",
+              "children": []
+            },
+            {
+              "id": "XGenUniversalBlockingOligo\u2013TSHT-i5-25rxn",
+              "children": []
+            },
+            {
+              "id": "25rxnxGenUniversalBlockingOligo\u2013TSHT-i7",
+              "children": []
+            },
+            {
+              "id": "SureSelectHumanAllExonv6",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "BulkWESLevel2",
+          "children": []
+        },
+        {
+          "id": "ProportionCoverage10x",
+          "children": []
+        },
+        {
+          "id": "ProportionCoverage30X",
+          "children": []
+        },
+        {
+          "id": "BulkWESLevel3",
+          "children": []
+        },
+        {
+          "id": "GermlineVariantsWorkflowURL",
+          "children": []
+        },
+        {
+          "id": "GermlineVariantsWorkflowType",
+          "children": [
+            {
+              "id": "GATK4",
+              "children": []
+            },
+            {
+              "id": "OtherGermlineVariantsWorkflowType",
+              "children": []
+            },
+            {
+              "id": "None",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "SomaticVariantsWorkflowURL",
+          "children": []
+        },
+        {
+          "id": "SomaticVariantsWorkflowType",
+          "children": [
+            {
+              "id": "GATK4",
+              "children": []
+            },
+            {
+              "id": "None",
+              "children": []
+            },
+            {
+              "id": "CaVEMan",
+              "children": []
+            },
+            {
+              "id": "MuTect2",
+              "children": []
+            },
+            {
+              "id": "MuSE",
+              "children": []
+            },
+            {
+              "id": "Pindel",
+              "children": []
+            },
+            {
+              "id": "SomaticSniper",
+              "children": []
+            },
+            {
+              "id": "VarScan2",
+              "children": []
+            },
+            {
+              "id": "OtherSomaticVariantsWorkflowType",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "SomaticVariantsSampleType",
+          "children": [
+            {
+              "id": "NotApplicable",
+              "children": []
+            },
+            {
+              "id": "CaseSample",
+              "children": []
+            },
+            {
+              "id": "ControlSample",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "StructuralVariantWorkflowURL",
+          "children": []
+        },
+        {
+          "id": "StructuralVariantWorkflowType",
+          "children": [
+            {
+              "id": "GATK4",
+              "children": []
+            },
+            {
+              "id": "None",
+              "children": []
+            },
+            {
+              "id": "BRASS",
+              "children": []
+            },
+            {
+              "id": "CNV",
+              "children": []
+            },
+            {
+              "id": "CNVkit",
+              "children": []
+            },
+            {
+              "id": "OtherStructuralVariantWorkflowType",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "ScATAC-seqLevel1",
+          "children": [
+            {
+              "id": "SingleNucleusBuffer",
+              "children": [
+                {
+                  "id": "10x",
+                  "children": []
+                },
+                {
+                  "id": "NIB",
+                  "children": []
+                },
+                {
+                  "id": "Omni",
+                  "children": []
+                },
+                {
+                  "id": "TST",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "TranspositionReaction",
+              "children": [
+                {
+                  "id": "Tn5",
+                  "children": []
+                },
+                {
+                  "id": "EZ-Tn5",
+                  "children": []
+                },
+                {
+                  "id": "Tn5-059",
+                  "children": []
+                },
+                {
+                  "id": "NexteraTn5",
+                  "children": []
+                },
+                {
+                  "id": "Diagenode-unloadedApex-Bio",
+                  "children": []
+                },
+                {
+                  "id": "Diagenode-loadedApex-Bio",
+                  "children": []
+                },
+                {
+                  "id": "In-House",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "ScATACseqLibraryLayout",
+              "children": [
+                {
+                  "id": "ScATACseqPairedEnd",
+                  "children": [
+                    {
+                      "id": "ScATACseqRead1",
+                      "children": [
+                        {
+                          "id": "CellBarcodeandDNAInsert",
+                          "children": []
+                        },
+                        {
+                          "id": "SampleIndexandDNAInsert",
+                          "children": []
+                        },
+                        {
+                          "id": "DNAInsert",
+                          "children": []
+                        },
+                        {
+                          "id": "SampleIndex",
+                          "children": []
+                        },
+                        {
+                          "id": "CellBarcode",
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "id": "ScATACseqRead2",
+                      "children": [
+                        {
+                          "id": "CellBarcodeandDNAInsert",
+                          "children": []
+                        },
+                        {
+                          "id": "SampleIndexandDNAInsert",
+                          "children": []
+                        },
+                        {
+                          "id": "DNAInsert",
+                          "children": []
+                        },
+                        {
+                          "id": "SampleIndex",
+                          "children": []
+                        },
+                        {
+                          "id": "CellBarcode",
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "NucleusIdentifier",
+              "children": [
+                {
+                  "id": "NucleiBarcode",
+                  "children": [
+                    {
+                      "id": "NucleiBarcodeLength",
+                      "children": []
+                    },
+                    {
+                      "id": "NucleiBarcodeRead",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "NucleiBarcodeLength",
+              "children": []
+            },
+            {
+              "id": "NucleiBarcodeRead",
+              "children": []
+            },
+            {
+              "id": "ScATACseqRead1",
+              "children": [
+                {
+                  "id": "CellBarcodeandDNAInsert",
+                  "children": []
+                },
+                {
+                  "id": "SampleIndexandDNAInsert",
+                  "children": []
+                },
+                {
+                  "id": "DNAInsert",
+                  "children": []
+                },
+                {
+                  "id": "SampleIndex",
+                  "children": []
+                },
+                {
+                  "id": "CellBarcode",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "ScATACseqRead2",
+              "children": [
+                {
+                  "id": "CellBarcodeandDNAInsert",
+                  "children": []
+                },
+                {
+                  "id": "SampleIndexandDNAInsert",
+                  "children": []
+                },
+                {
+                  "id": "DNAInsert",
+                  "children": []
+                },
+                {
+                  "id": "SampleIndex",
+                  "children": []
+                },
+                {
+                  "id": "CellBarcode",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "ScATACseqRead3",
+              "children": [
+                {
+                  "id": "CellBarcodeandDNAInsert",
+                  "children": []
+                },
+                {
+                  "id": "SampleIndexandDNAInsert",
+                  "children": []
+                },
+                {
+                  "id": "DNAInsert",
+                  "children": []
+                },
+                {
+                  "id": "SampleIndex",
+                  "children": []
+                },
+                {
+                  "id": "CellBarcode",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "ThresholdforMinimumPassingReads",
+              "children": []
+            },
+            {
+              "id": "TotalNumberofPassingNuclei",
+              "children": []
+            },
+            {
+              "id": "MedianFractionofReadsinPeaks",
+              "children": []
+            },
+            {
+              "id": "MedianFractionofReadsinAnnotatedcisDNAElements",
+              "children": []
+            },
+            {
+              "id": "MedianPassingReadPercentage",
+              "children": []
+            },
+            {
+              "id": "MedianPercentageofMitochondrialReadsperNucleus",
+              "children": []
+            },
+            {
+              "id": "MapQ30",
+              "children": []
+            },
+            {
+              "id": "PeaksCallingSoftware",
+              "children": []
+            },
+            {
+              "id": "NucleiBarcode",
+              "children": [
+                {
+                  "id": "NucleiBarcodeLength",
+                  "children": []
+                },
+                {
+                  "id": "NucleiBarcodeRead",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "ScATACseqPairedEnd",
+              "children": [
+                {
+                  "id": "ScATACseqRead1",
+                  "children": [
+                    {
+                      "id": "CellBarcodeandDNAInsert",
+                      "children": []
+                    },
+                    {
+                      "id": "SampleIndexandDNAInsert",
+                      "children": []
+                    },
+                    {
+                      "id": "DNAInsert",
+                      "children": []
+                    },
+                    {
+                      "id": "SampleIndex",
+                      "children": []
+                    },
+                    {
+                      "id": "CellBarcode",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "ScATACseqRead2",
+                  "children": [
+                    {
+                      "id": "CellBarcodeandDNAInsert",
+                      "children": []
+                    },
+                    {
+                      "id": "SampleIndexandDNAInsert",
+                      "children": []
+                    },
+                    {
+                      "id": "DNAInsert",
+                      "children": []
+                    },
+                    {
+                      "id": "SampleIndex",
+                      "children": []
+                    },
+                    {
+                      "id": "CellBarcode",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ScATAC-seqLevel2",
+          "children": [
+            {
+              "id": "NCountPeaks",
+              "children": []
+            },
+            {
+              "id": "NFeaturePeaks",
+              "children": []
+            },
+            {
+              "id": "TotalRead-Pairs",
+              "children": []
+            },
+            {
+              "id": "DuplicateRead-Pairs",
+              "children": []
+            },
+            {
+              "id": "ChimericRead-Pairs",
+              "children": []
+            },
+            {
+              "id": "UnmappedRead-Pairs",
+              "children": []
+            },
+            {
+              "id": "LowMapQ",
+              "children": []
+            },
+            {
+              "id": "MitochondrialRead-Pairs",
+              "children": []
+            },
+            {
+              "id": "PassedFilters",
+              "children": []
+            },
+            {
+              "id": "TSSFragments",
+              "children": []
+            },
+            {
+              "id": "DNaseSensitiveRegionFragments",
+              "children": []
+            },
+            {
+              "id": "EnhancerRegionFragments",
+              "children": []
+            },
+            {
+              "id": "PromoterRegionFragments",
+              "children": []
+            },
+            {
+              "id": "OnTargetFragments",
+              "children": []
+            },
+            {
+              "id": "BlacklistRegionFragments",
+              "children": []
+            },
+            {
+              "id": "PeakRegionFragments",
+              "children": []
+            },
+            {
+              "id": "PeakRegionCutsites",
+              "children": []
+            },
+            {
+              "id": "NucleosomeSignal",
+              "children": []
+            },
+            {
+              "id": "NucleosomePercentile",
+              "children": []
+            },
+            {
+              "id": "TSSEnrichment",
+              "children": []
+            },
+            {
+              "id": "TSSPercentile",
+              "children": []
+            },
+            {
+              "id": "PctReadsinPeaks",
+              "children": []
+            },
+            {
+              "id": "BlacklistRatio",
+              "children": []
+            },
+            {
+              "id": "SeuratClusters",
+              "children": []
+            },
+            {
+              "id": "NCountRNA",
+              "children": []
+            },
+            {
+              "id": "NFeatureRNA",
+              "children": []
+            },
+            {
+              "id": "MACS2Seqnames",
+              "children": []
+            },
+            {
+              "id": "MACS2Start",
+              "children": []
+            },
+            {
+              "id": "MACS2End",
+              "children": []
+            },
+            {
+              "id": "MACS2Width",
+              "children": []
+            },
+            {
+              "id": "MACS2Strand",
+              "children": []
+            },
+            {
+              "id": "MACS2Name",
+              "children": []
+            },
+            {
+              "id": "MACS2Score",
+              "children": []
+            },
+            {
+              "id": "MACS2FoldChange",
+              "children": []
+            },
+            {
+              "id": "MACS2NegLog10pvalueSummit",
+              "children": []
+            },
+            {
+              "id": "MACS2NegLog10qvalueSummit",
+              "children": []
+            },
+            {
+              "id": "MACS2RelativeSummitPosition",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "ScATAC-seqLevel3",
+          "children": [
+            {
+              "id": "ScATAC-seqObjectID",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "ScmC-seqLevel1",
+          "children": [
+            {
+              "id": "ScmCseqRead1",
+              "children": [
+                {
+                  "id": "CDNA",
+                  "children": []
+                },
+                {
+                  "id": "CellBarcodeandUMI",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "ScmCseqRead2",
+              "children": [
+                {
+                  "id": "CDNA",
+                  "children": []
+                },
+                {
+                  "id": "CellBarcodeandUMI",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "ScmCseqRead3",
+              "children": [
+                {
+                  "id": "CDNA",
+                  "children": []
+                },
+                {
+                  "id": "CellBarcodeandUMI",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "SingleNucleusCapture",
+              "children": [
+                {
+                  "id": "Plates",
+                  "children": []
+                },
+                {
+                  "id": "10x",
+                  "children": []
+                },
+                {
+                  "id": "Droplet",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ScmC-seqLevel2",
+          "children": []
+        },
+        {
+          "id": "ScATAC-seqLevel4",
+          "children": []
+        },
+        {
+          "id": "ScATACseqWorkflowType",
+          "children": []
+        },
+        {
+          "id": "ScATACseqWorkflowParametersDescription",
+          "children": []
+        },
+        {
+          "id": "ScDNA-seqLevel1",
+          "children": []
+        },
+        {
+          "id": "ScDNA-seqLevel2",
+          "children": []
+        },
+        {
+          "id": "ProportionMitochondrialReads",
+          "children": []
+        },
+        {
+          "id": "MultiplexedCITE-seqLevel1",
+          "children": [
+            {
+              "id": "AssociatedmRNALibraryDataFileID",
+              "children": []
+            },
+            {
+              "id": "SingleCellBarcodeMethodApplied",
+              "children": [
+                {
+                  "id": "Other",
+                  "children": []
+                },
+                {
+                  "id": "Cite-seqcustompanel",
+                  "children": []
+                },
+                {
+                  "id": "BiolegendTotalseqACustom",
+                  "children": []
+                },
+                {
+                  "id": "BiolegendTotalseqBCustom",
+                  "children": []
+                },
+                {
+                  "id": "BiolegendTotalseqCCustom",
+                  "children": []
+                },
+                {
+                  "id": "BiolegendTotalseqAHuman",
+                  "children": []
+                },
+                {
+                  "id": "UniversalcocktailV1.0",
+                  "children": []
+                },
+                {
+                  "id": "BiolegendTotalseqBHumanUniversalcocktailV1.0",
+                  "children": []
+                },
+                {
+                  "id": "BiolegendTotalseqCHumanUniversalcocktailV1.0",
+                  "children": []
+                },
+                {
+                  "id": "Cell",
+                  "children": []
+                },
+                {
+                  "id": "Hashtag-multiplex",
+                  "children": []
+                },
+                {
+                  "id": "NuclearHashtag-multiplex",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "FeatureBarcodeLibraryType",
+              "children": [
+                {
+                  "id": "10xADT\u2013citeseq/hashing",
+                  "children": []
+                },
+                {
+                  "id": "10xTCR",
+                  "children": []
+                },
+                {
+                  "id": "10xBCR",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "BarcodeFolderSynapseID",
+              "children": []
+            },
+            {
+              "id": "BarcodeFolderFileList",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "MultiplexedCITE-seqLevel2",
+          "children": []
+        },
+        {
+          "id": "MultiplexedCITE-seqLevel3",
+          "children": []
+        },
+        {
+          "id": "MultiplexedCITE-seqLevel4",
+          "children": []
+        },
+        {
+          "id": "BulkMethylation-seqLevel1",
+          "children": [
+            {
+              "id": "BisulfiteConversion",
+              "children": [
+                {
+                  "id": "ZimoEZDNAMethylationKit",
+                  "children": []
+                },
+                {
+                  "id": "ZimoEZ-96DNAMethylationShallowKit",
+                  "children": []
+                },
+                {
+                  "id": "ZimoEZ-96DNAMethylationDeepKit",
+                  "children": []
+                },
+                {
+                  "id": "NEBNextEnzymaticMethyl-seqKit",
+                  "children": []
+                },
+                {
+                  "id": "AgilentSureSelectXTMethyl-Seq",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "BulkMethylationAssayType",
+              "children": [
+                {
+                  "id": "TotalDNAInput",
+                  "children": []
+                },
+                {
+                  "id": "Wholegenome",
+                  "children": []
+                },
+                {
+                  "id": "TargetedGenome",
+                  "children": [
+                    {
+                      "id": "MeDIP",
+                      "children": []
+                    },
+                    {
+                      "id": "RRBS",
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "BeadchipArray",
+                  "children": [
+                    {
+                      "id": "HM27K",
+                      "children": []
+                    },
+                    {
+                      "id": "HM450K",
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ReplicateType",
+          "children": [
+            {
+              "id": "NotApplicable",
+              "children": []
+            },
+            {
+              "id": "Technicalreplicate",
+              "children": []
+            },
+            {
+              "id": "Biologicalreplicate",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "BulkMethylation-seqLevel2",
+          "children": [
+            {
+              "id": "Trimmer",
+              "children": [
+                {
+                  "id": "FASTXtoolkit",
+                  "children": []
+                },
+                {
+                  "id": "SolexaQA",
+                  "children": []
+                },
+                {
+                  "id": "Btrim",
+                  "children": []
+                },
+                {
+                  "id": "Cutadapt",
+                  "children": []
+                },
+                {
+                  "id": "Kraken",
+                  "children": []
+                },
+                {
+                  "id": "PRINSEQ",
+                  "children": []
+                },
+                {
+                  "id": "Adapterremoval",
+                  "children": []
+                },
+                {
+                  "id": "TrimGalore!",
+                  "children": []
+                },
+                {
+                  "id": "ConDeTri",
+                  "children": []
+                },
+                {
+                  "id": "ERNE-FILTER",
+                  "children": []
+                },
+                {
+                  "id": "Trimmo-matic",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "BulkMethylationGenomicReference",
+              "children": [
+                {
+                  "id": "HG19",
+                  "children": []
+                },
+                {
+                  "id": "HG38",
+                  "children": []
+                },
+                {
+                  "id": "T2TCHM13",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "DuplicateRemovalSoftware",
+              "children": [
+                {
+                  "id": "Samtoolssort",
+                  "children": []
+                },
+                {
+                  "id": "PicardMarkDuplicates",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "ProportionofMinimumCpGCoverage10X",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "BulkMethylation-seqLevel3",
+          "children": [
+            {
+              "id": "DMCCallingTool",
+              "children": [
+                {
+                  "id": "BSmooth",
+                  "children": []
+                },
+                {
+                  "id": "MethylKit",
+                  "children": []
+                },
+                {
+                  "id": "BiSeq",
+                  "children": []
+                },
+                {
+                  "id": "MethylSig",
+                  "children": []
+                },
+                {
+                  "id": "DSS",
+                  "children": []
+                },
+                {
+                  "id": "MOABS",
+                  "children": []
+                },
+                {
+                  "id": "DSS-single",
+                  "children": []
+                },
+                {
+                  "id": "Metilene",
+                  "children": []
+                },
+                {
+                  "id": "MACAU",
+                  "children": []
+                },
+                {
+                  "id": "MethylDackel",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "DMCCallingWorkflowURL",
+              "children": []
+            },
+            {
+              "id": "DMRCallingTool",
+              "children": [
+                {
+                  "id": "BSmooth",
+                  "children": []
+                },
+                {
+                  "id": "MethylKit",
+                  "children": []
+                },
+                {
+                  "id": "BiSeq",
+                  "children": []
+                },
+                {
+                  "id": "MethylSig",
+                  "children": []
+                },
+                {
+                  "id": "DSS",
+                  "children": []
+                },
+                {
+                  "id": "MOABS",
+                  "children": []
+                },
+                {
+                  "id": "DSS-single",
+                  "children": []
+                },
+                {
+                  "id": "Metilene",
+                  "children": []
+                },
+                {
+                  "id": "MACAU",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "DMRCallingWorkflowURL",
+              "children": []
+            },
+            {
+              "id": "PUC19methylationratio",
+              "children": []
+            },
+            {
+              "id": "Lambdamethylationratio",
+              "children": []
+            },
+            {
+              "id": "DMCdatafileformat",
+              "children": [
+                {
+                  "id": "BED",
+                  "children": []
+                },
+                {
+                  "id": "BedGraph",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "DMRdatafileFormat",
+              "children": [
+                {
+                  "id": "BED",
+                  "children": []
+                },
+                {
+                  "id": "BedGraph",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "SoftwareandVersion",
+          "children": []
+        },
+        {
+          "id": "HI-C-seqLevel1",
+          "children": []
+        },
+        {
+          "id": "CrosslinkingCondtion",
+          "children": []
+        },
+        {
+          "id": "DNADigestionCondition",
+          "children": []
+        },
+        {
+          "id": "NucleiPermeabilizationMethod",
+          "children": []
+        },
+        {
+          "id": "LigationCondition",
+          "children": []
+        },
+        {
+          "id": "BiotinEnrichment",
+          "children": [
+            {
+              "id": "Yes",
+              "children": []
+            },
+            {
+              "id": "No",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "DNAInputAmount",
+          "children": []
+        },
+        {
+          "id": "HI-C-seqLevel2",
+          "children": []
+        },
+        {
+          "id": "AlignedReadLength",
+          "children": []
+        },
+        {
+          "id": "Resolution",
+          "children": []
+        },
+        {
+          "id": "HI-C-seqLevel3",
+          "children": []
+        },
+        {
+          "id": "StripeCalling",
+          "children": [
+            {
+              "id": "Other",
+              "children": []
+            },
+            {
+              "id": "MACS2",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "LoopWindow",
+          "children": []
+        },
+        {
+          "id": "StripeWindow",
+          "children": []
+        },
+        {
+          "id": "LoopCalling",
+          "children": [
+            {
+              "id": "Other",
+              "children": []
+            },
+            {
+              "id": "HiCCUPS",
+              "children": []
+            },
+            {
+              "id": "Cooltools",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "CDNAOffset",
+          "children": []
+        },
+        {
+          "id": "CDNALength",
+          "children": []
+        },
+        {
+          "id": "Yes-TrimAdapterSequence",
+          "children": [
+            {
+              "id": "AdapterTrimmerName",
+              "children": []
+            },
+            {
+              "id": "AdapterTrimmerVersion",
+              "children": []
+            },
+            {
+              "id": "AdapterTrimmerOptions",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "AdapterTrimmerName",
+          "children": []
+        },
+        {
+          "id": "AdapterTrimmerVersion",
+          "children": []
+        },
+        {
+          "id": "AdapterTrimmerOptions",
+          "children": []
+        },
+        {
+          "id": "Yes-AppliedHardTrimming",
+          "children": []
+        },
+        {
+          "id": "OtherGermlineVariantsWorkflowType",
+          "children": []
+        },
+        {
+          "id": "CustomGermlineVariantsWorkflowType",
+          "children": []
+        },
+        {
+          "id": "OtherSomaticVariantsWorkflowType",
+          "children": []
+        },
+        {
+          "id": "CustomSomaticVariantsWorkflowType",
+          "children": []
+        },
+        {
+          "id": "OtherStructuralVariantWorkflowType",
+          "children": []
+        },
+        {
+          "id": "CustomStructuralVariantWorkflowType",
+          "children": []
+        },
+        {
+          "id": "OtherAlignmentWorkflow",
+          "children": []
+        },
+        {
+          "id": "CustomAlignmentWorkflow",
+          "children": []
+        },
+        {
+          "id": "Yes-PseudoAlignmentUsed",
+          "children": []
+        },
+        {
+          "id": "Yes-FusionGeneDetected",
+          "children": []
+        },
+        {
+          "id": "OtherFusionGene",
+          "children": []
+        },
+        {
+          "id": "SpecifyOtherFusionGene",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "OtherAssay",
+      "children": []
+    },
+    {
+      "id": "AssayType",
+      "children": []
+    },
+    {
+      "id": "ExSeqMinimal",
+      "children": []
+    },
+    {
+      "id": "MicroarrayLevel1",
+      "children": [
+        {
+          "id": "MicroarrayPlatformID",
+          "children": []
+        },
+        {
+          "id": "MicroarrayMolecule",
+          "children": [
+            {
+              "id": "RNA",
+              "children": []
+            },
+            {
+              "id": "DNA",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "MicroarrayLabel",
+          "children": []
+        },
+        {
+          "id": "MicroarrayValueDefinition",
+          "children": []
+        },
+        {
+          "id": "MicroarrayProtocolAuxiliaryFile",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "MicroarrayLevel2",
+      "children": []
+    },
+    {
+      "id": "ImagingLevel1",
+      "children": []
+    },
+    {
+      "id": "ImagingLevel2",
+      "children": [
+        {
+          "id": "ChannelMetadataFilename",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "MERFISHPositionsFile",
+      "children": []
+    },
+    {
+      "id": "MERFISHCodebookFile",
+      "children": []
+    },
+    {
+      "id": "ImagingLevel3Segmentation",
+      "children": []
+    },
+    {
+      "id": "ImagingLevel3Image",
+      "children": []
+    },
+    {
+      "id": "ImagingLevel3Channels",
+      "children": [
+        {
+          "id": "Vendor",
+          "children": []
+        },
+        {
+          "id": "CatalogNumber",
+          "children": []
+        },
+        {
+          "id": "Clone",
+          "children": []
+        },
+        {
+          "id": "HTANChannelMetadataID",
+          "children": []
+        },
+        {
+          "id": "ChannelID",
+          "children": []
+        },
+        {
+          "id": "ChannelName",
+          "children": []
+        },
+        {
+          "id": "ChannelPassedQC",
+          "children": [
+            {
+              "id": "Yes",
+              "children": []
+            },
+            {
+              "id": "No-ChannelFailedQC",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "CycleNumber",
+          "children": []
+        },
+        {
+          "id": "SubCycleNumber",
+          "children": []
+        },
+        {
+          "id": "AntibodyRole",
+          "children": [
+            {
+              "id": "Primary",
+              "children": []
+            },
+            {
+              "id": "Secondary",
+              "children": []
+            },
+            {
+              "id": "Neither-Dye/Stain",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "TargetName",
+          "children": []
+        },
+        {
+          "id": "AntibodyName",
+          "children": []
+        },
+        {
+          "id": "RRIDidentifier",
+          "children": []
+        },
+        {
+          "id": "Fluorophore",
+          "children": []
+        },
+        {
+          "id": "Lot",
+          "children": []
+        },
+        {
+          "id": "ExcitationWavelength",
+          "children": []
+        },
+        {
+          "id": "EmissionWavelength",
+          "children": []
+        },
+        {
+          "id": "ExcitationBandwidth",
+          "children": []
+        },
+        {
+          "id": "EmissionBandwidth",
+          "children": []
+        },
+        {
+          "id": "MetalIsotopeElement",
+          "children": [
+            {
+              "id": "Md",
+              "children": []
+            },
+            {
+              "id": "Am",
+              "children": []
+            },
+            {
+              "id": "B",
+              "children": []
+            },
+            {
+              "id": "C",
+              "children": []
+            },
+            {
+              "id": "No",
+              "children": []
+            },
+            {
+              "id": "H",
+              "children": []
+            },
+            {
+              "id": "He",
+              "children": []
+            },
+            {
+              "id": "Li",
+              "children": []
+            },
+            {
+              "id": "Be",
+              "children": []
+            },
+            {
+              "id": "N",
+              "children": []
+            },
+            {
+              "id": "O",
+              "children": []
+            },
+            {
+              "id": "F",
+              "children": []
+            },
+            {
+              "id": "Ne",
+              "children": []
+            },
+            {
+              "id": "Na",
+              "children": []
+            },
+            {
+              "id": "Mg",
+              "children": []
+            },
+            {
+              "id": "Al",
+              "children": []
+            },
+            {
+              "id": "Si",
+              "children": []
+            },
+            {
+              "id": "P",
+              "children": []
+            },
+            {
+              "id": "S",
+              "children": []
+            },
+            {
+              "id": "Cl",
+              "children": []
+            },
+            {
+              "id": "Ar",
+              "children": []
+            },
+            {
+              "id": "K",
+              "children": []
+            },
+            {
+              "id": "Ca",
+              "children": []
+            },
+            {
+              "id": "Sc",
+              "children": []
+            },
+            {
+              "id": "Ti",
+              "children": []
+            },
+            {
+              "id": "V",
+              "children": []
+            },
+            {
+              "id": "Cr",
+              "children": []
+            },
+            {
+              "id": "Mn",
+              "children": []
+            },
+            {
+              "id": "Fe",
+              "children": []
+            },
+            {
+              "id": "Co",
+              "children": []
+            },
+            {
+              "id": "Ni",
+              "children": []
+            },
+            {
+              "id": "Cu",
+              "children": []
+            },
+            {
+              "id": "Zn",
+              "children": []
+            },
+            {
+              "id": "Ga",
+              "children": []
+            },
+            {
+              "id": "Ge",
+              "children": []
+            },
+            {
+              "id": "As",
+              "children": []
+            },
+            {
+              "id": "Se",
+              "children": []
+            },
+            {
+              "id": "Br",
+              "children": []
+            },
+            {
+              "id": "Kr",
+              "children": []
+            },
+            {
+              "id": "Rb",
+              "children": []
+            },
+            {
+              "id": "Sr",
+              "children": []
+            },
+            {
+              "id": "Y",
+              "children": []
+            },
+            {
+              "id": "Zr",
+              "children": []
+            },
+            {
+              "id": "Nb",
+              "children": []
+            },
+            {
+              "id": "Mo",
+              "children": []
+            },
+            {
+              "id": "Tc",
+              "children": []
+            },
+            {
+              "id": "Ru",
+              "children": []
+            },
+            {
+              "id": "Rh",
+              "children": []
+            },
+            {
+              "id": "Pd",
+              "children": []
+            },
+            {
+              "id": "Ag",
+              "children": []
+            },
+            {
+              "id": "Cd",
+              "children": []
+            },
+            {
+              "id": "In",
+              "children": []
+            },
+            {
+              "id": "Sn",
+              "children": []
+            },
+            {
+              "id": "Sb",
+              "children": []
+            },
+            {
+              "id": "Te",
+              "children": []
+            },
+            {
+              "id": "I",
+              "children": []
+            },
+            {
+              "id": "Xe",
+              "children": []
+            },
+            {
+              "id": "Cs",
+              "children": []
+            },
+            {
+              "id": "Ba",
+              "children": []
+            },
+            {
+              "id": "La",
+              "children": []
+            },
+            {
+              "id": "Ce",
+              "children": []
+            },
+            {
+              "id": "Pr",
+              "children": []
+            },
+            {
+              "id": "Nd",
+              "children": []
+            },
+            {
+              "id": "Pm",
+              "children": []
+            },
+            {
+              "id": "Sm",
+              "children": []
+            },
+            {
+              "id": "Eu",
+              "children": []
+            },
+            {
+              "id": "Gd",
+              "children": []
+            },
+            {
+              "id": "Tb",
+              "children": []
+            },
+            {
+              "id": "Dy",
+              "children": []
+            },
+            {
+              "id": "Ho",
+              "children": []
+            },
+            {
+              "id": "Er",
+              "children": []
+            },
+            {
+              "id": "Tm",
+              "children": []
+            },
+            {
+              "id": "Yb",
+              "children": []
+            },
+            {
+              "id": "Lu",
+              "children": []
+            },
+            {
+              "id": "Hf",
+              "children": []
+            },
+            {
+              "id": "Ta",
+              "children": []
+            },
+            {
+              "id": "W",
+              "children": []
+            },
+            {
+              "id": "Re",
+              "children": []
+            },
+            {
+              "id": "Os",
+              "children": []
+            },
+            {
+              "id": "Ir",
+              "children": []
+            },
+            {
+              "id": "Pt",
+              "children": []
+            },
+            {
+              "id": "Au",
+              "children": []
+            },
+            {
+              "id": "Hg",
+              "children": []
+            },
+            {
+              "id": "Tl",
+              "children": []
+            },
+            {
+              "id": "Pb",
+              "children": []
+            },
+            {
+              "id": "Bi",
+              "children": []
+            },
+            {
+              "id": "Po",
+              "children": []
+            },
+            {
+              "id": "At",
+              "children": []
+            },
+            {
+              "id": "Rn",
+              "children": []
+            },
+            {
+              "id": "Fr",
+              "children": []
+            },
+            {
+              "id": "Ra",
+              "children": []
+            },
+            {
+              "id": "Ac",
+              "children": []
+            },
+            {
+              "id": "Th",
+              "children": []
+            },
+            {
+              "id": "Pa",
+              "children": []
+            },
+            {
+              "id": "U",
+              "children": []
+            },
+            {
+              "id": "Np",
+              "children": []
+            },
+            {
+              "id": "Pu",
+              "children": []
+            },
+            {
+              "id": "Bk",
+              "children": []
+            },
+            {
+              "id": "Cf",
+              "children": []
+            },
+            {
+              "id": "Es",
+              "children": []
+            },
+            {
+              "id": "Fm",
+              "children": []
+            },
+            {
+              "id": "Lr",
+              "children": []
+            },
+            {
+              "id": "Rf",
+              "children": []
+            },
+            {
+              "id": "Db",
+              "children": []
+            },
+            {
+              "id": "Sg",
+              "children": []
+            },
+            {
+              "id": "Bh",
+              "children": []
+            },
+            {
+              "id": "Hs",
+              "children": []
+            },
+            {
+              "id": "Mt",
+              "children": []
+            },
+            {
+              "id": "Ds",
+              "children": []
+            },
+            {
+              "id": "Rg",
+              "children": []
+            },
+            {
+              "id": "Cn",
+              "children": []
+            },
+            {
+              "id": "Nh",
+              "children": []
+            },
+            {
+              "id": "Fl",
+              "children": []
+            },
+            {
+              "id": "Mc",
+              "children": []
+            },
+            {
+              "id": "Lv",
+              "children": []
+            },
+            {
+              "id": "Ts",
+              "children": []
+            },
+            {
+              "id": "Og",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "MetalIsotopeMass",
+          "children": []
+        },
+        {
+          "id": "OligoBarcodeUpperStrand",
+          "children": []
+        },
+        {
+          "id": "OligoBarcodeLowerStrand",
+          "children": []
+        },
+        {
+          "id": "Dilution",
+          "children": []
+        },
+        {
+          "id": "Concentration",
+          "children": []
+        },
+        {
+          "id": "No-ChannelFailedQC",
+          "children": []
+        },
+        {
+          "id": "ChannelQCFailureType",
+          "children": [
+            {
+              "id": "Off-targetstaining",
+              "children": []
+            },
+            {
+              "id": "Auto-fluoresence",
+              "children": []
+            },
+            {
+              "id": "Stainingartefacet",
+              "children": []
+            },
+            {
+              "id": "Imagingartefact",
+              "children": []
+            },
+            {
+              "id": "Other/multiplechannelQCfaliuretypes",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "Other/multiplechannelQCfaliuretypes",
+          "children": []
+        },
+        {
+          "id": "ChannelQCFailureComment",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "NanoStringGeoMxDSPROIRCCSegmentAnnotationMetadata",
+      "children": [
+        {
+          "id": "Scanname",
+          "children": []
+        },
+        {
+          "id": "ROIname",
+          "children": []
+        },
+        {
+          "id": "Segmentname",
+          "children": []
+        },
+        {
+          "id": "ROIXCoordinate",
+          "children": []
+        },
+        {
+          "id": "ROIYCoordinate",
+          "children": []
+        },
+        {
+          "id": "Tags",
+          "children": []
+        },
+        {
+          "id": "QCstatus",
+          "children": []
+        },
+        {
+          "id": "ScanHeight",
+          "children": []
+        },
+        {
+          "id": "ScanWidth",
+          "children": []
+        },
+        {
+          "id": "ScanOffsetX",
+          "children": []
+        },
+        {
+          "id": "ScanOffsetY",
+          "children": []
+        },
+        {
+          "id": "BindingDensity",
+          "children": []
+        },
+        {
+          "id": "Positivenormfactor",
+          "children": []
+        },
+        {
+          "id": "Surfacearea",
+          "children": []
+        },
+        {
+          "id": "Nucleicount",
+          "children": []
+        },
+        {
+          "id": "TissueStain",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "NanoStringGeoMxDSPROIDCCSegmentAnnotationMetadata",
+      "children": [
+        {
+          "id": "MapQ30",
+          "children": []
+        },
+        {
+          "id": "Scanname",
+          "children": []
+        },
+        {
+          "id": "ROIname",
+          "children": []
+        },
+        {
+          "id": "Segmentname",
+          "children": []
+        },
+        {
+          "id": "ROIXCoordinate",
+          "children": []
+        },
+        {
+          "id": "ROIYCoordinate",
+          "children": []
+        },
+        {
+          "id": "Tags",
+          "children": []
+        },
+        {
+          "id": "Surfacearea",
+          "children": []
+        },
+        {
+          "id": "Nucleicount",
+          "children": []
+        },
+        {
+          "id": "Slidename",
+          "children": []
+        },
+        {
+          "id": "Rawreads",
+          "children": []
+        },
+        {
+          "id": "Stitchedreads",
+          "children": []
+        },
+        {
+          "id": "Alignedreads",
+          "children": []
+        },
+        {
+          "id": "Deduplicatedreads",
+          "children": []
+        },
+        {
+          "id": "InSituNegativemedian",
+          "children": []
+        },
+        {
+          "id": "Biologicalprobemedian",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "ImagingLevel4",
+      "children": [
+        {
+          "id": "HTANParentChannelMetadataID",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "SRRSImagingLevel2",
+      "children": []
+    },
+    {
+      "id": "RPPALevel2",
+      "children": [
+        {
+          "id": "NormalizationMethod",
+          "children": []
+        },
+        {
+          "id": "HTANRPPAAntibodyTable",
+          "children": [
+            {
+              "id": "HTANRPPAAntibodyTableID",
+              "children": []
+            },
+            {
+              "id": "AbNameReportedonDataset",
+              "children": []
+            },
+            {
+              "id": "GENCODEGeneSymbolTarget",
+              "children": []
+            },
+            {
+              "id": "UNIPROTProteinIDTarget",
+              "children": []
+            },
+            {
+              "id": "PhosphoproteinFlag",
+              "children": [
+                {
+                  "id": "True",
+                  "children": []
+                },
+                {
+                  "id": "False",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "InternalAbID",
+              "children": []
+            },
+            {
+              "id": "Species",
+              "children": [
+                {
+                  "id": "Mouse",
+                  "children": []
+                },
+                {
+                  "id": "Rabbit",
+                  "children": []
+                },
+                {
+                  "id": "Goat",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "RPPADilution",
+              "children": []
+            },
+            {
+              "id": "PhosphoSite",
+              "children": []
+            },
+            {
+              "id": "RPPAValidationStatus",
+              "children": [
+                {
+                  "id": "Valid",
+                  "children": []
+                },
+                {
+                  "id": "UsewithCaution",
+                  "children": []
+                },
+                {
+                  "id": "UnderEvaluation",
+                  "children": []
+                },
+                {
+                  "id": "UsedforQC",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "AntibodyNotes",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "RPPALevel3",
+      "children": [
+        {
+          "id": "BatchCorrectionMethod",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "RPPALevel4",
+      "children": []
+    },
+    {
+      "id": "MassSpectrometryLevel1",
+      "children": [
+        {
+          "id": "MSBatchID",
+          "children": []
+        },
+        {
+          "id": "MS-basedAssayType",
+          "children": [
+            {
+              "id": "LC-MS",
+              "children": []
+            },
+            {
+              "id": "MS",
+              "children": []
+            },
+            {
+              "id": "TMT",
+              "children": []
+            },
+            {
+              "id": "LC-MS/MS",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "MS-basedTargeted",
+          "children": [
+            {
+              "id": "Targeted",
+              "children": []
+            },
+            {
+              "id": "Untargeted",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "MSInstrumentVendorandModel",
+          "children": []
+        },
+        {
+          "id": "MSSource",
+          "children": [
+            {
+              "id": "Other",
+              "children": []
+            },
+            {
+              "id": "MALDI",
+              "children": []
+            },
+            {
+              "id": "MALDI-2",
+              "children": []
+            },
+            {
+              "id": "DESI",
+              "children": []
+            },
+            {
+              "id": "SIMS",
+              "children": []
+            },
+            {
+              "id": "NESI",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "Polarity",
+          "children": [
+            {
+              "id": "Positive",
+              "children": []
+            },
+            {
+              "id": "Negative",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "MassRangeLowValue",
+          "children": []
+        },
+        {
+          "id": "MassRangeHighValue",
+          "children": []
+        },
+        {
+          "id": "DataCollectionMode",
+          "children": [
+            {
+              "id": "Other",
+              "children": []
+            },
+            {
+              "id": "DDA",
+              "children": []
+            },
+            {
+              "id": "DIA",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "MSScanMode",
+          "children": [
+            {
+              "id": "Other",
+              "children": []
+            },
+            {
+              "id": "MS",
+              "children": []
+            },
+            {
+              "id": "MS/MS",
+              "children": []
+            },
+            {
+              "id": "MS3",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "MSLabeling",
+          "children": []
+        },
+        {
+          "id": "LCInstrumentVendorandModel",
+          "children": []
+        },
+        {
+          "id": "LCColumnVendorandModel",
+          "children": []
+        },
+        {
+          "id": "LCResin",
+          "children": []
+        },
+        {
+          "id": "LCLengthValue",
+          "children": []
+        },
+        {
+          "id": "LCTempValue",
+          "children": []
+        },
+        {
+          "id": "LCIDValue",
+          "children": []
+        },
+        {
+          "id": "LCFlowRate",
+          "children": []
+        },
+        {
+          "id": "LCGradient",
+          "children": []
+        },
+        {
+          "id": "LCMobilePhaseA",
+          "children": []
+        },
+        {
+          "id": "LCMobilePhaseB",
+          "children": []
+        },
+        {
+          "id": "MSInstrumentMetadataFile",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "MassSpectrometryLevel2",
+      "children": [
+        {
+          "id": "MSAssayCategory",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "MassSpectrometryAuxiliaryFile",
+      "children": []
+    },
+    {
+      "id": "MassSpectrometryLevel3",
+      "children": []
+    },
+    {
+      "id": "MassSpectrometryLevel4",
+      "children": []
+    },
+    {
+      "id": "ElectronMicroscopyLevel1",
+      "children": [
+        {
+          "id": "EMmethod",
+          "children": [
+            {
+              "id": "SEM",
+              "children": []
+            },
+            {
+              "id": "FIB-SEM",
+              "children": []
+            },
+            {
+              "id": "SBF-SEM",
+              "children": []
+            },
+            {
+              "id": "AT",
+              "children": []
+            },
+            {
+              "id": "TEM",
+              "children": []
+            },
+            {
+              "id": "ET",
+              "children": []
+            },
+            {
+              "id": "CryoET",
+              "children": []
+            },
+            {
+              "id": "SsTEM",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "EMsignalorcontrastmech",
+          "children": [
+            {
+              "id": "BSE",
+              "children": []
+            },
+            {
+              "id": "SE",
+              "children": []
+            },
+            {
+              "id": "Phase",
+              "children": []
+            },
+            {
+              "id": "Bright-field",
+              "children": []
+            },
+            {
+              "id": "Dark-field",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "EMinstrument",
+          "children": []
+        },
+        {
+          "id": "EMdwellorexposuretime",
+          "children": []
+        },
+        {
+          "id": "EMvoltage",
+          "children": []
+        },
+        {
+          "id": "EMbeamcurrent",
+          "children": []
+        },
+        {
+          "id": "EMspotsize",
+          "children": []
+        },
+        {
+          "id": "EMstagetilt",
+          "children": []
+        },
+        {
+          "id": "EMsignalprocessing",
+          "children": [
+            {
+              "id": "None",
+              "children": []
+            },
+            {
+              "id": "Lineintegration",
+              "children": []
+            },
+            {
+              "id": "Frameintegration",
+              "children": []
+            },
+            {
+              "id": "Frameaveraging",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "EMcontrasttype",
+          "children": [
+            {
+              "id": "SEM",
+              "children": []
+            },
+            {
+              "id": "TEM",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "TileoverlapX",
+          "children": []
+        },
+        {
+          "id": "TileoverlapY",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "ElectronMicroscopyLevel2",
+      "children": []
+    },
+    {
+      "id": "ElectronMicroscopyLevel3",
+      "children": []
+    },
+    {
+      "id": "ElectronMicroscopyLevel4",
+      "children": []
+    }
+  ]
+}
