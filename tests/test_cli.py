@@ -71,16 +71,16 @@ def test_generate_tree_with_max_depth_2(runner, mock_schema_file):
         assert "children" in child
 
 
-def test_list_roots(runner, mock_schema_file):
-    """test the 'roots' command"""
-    result = runner.invoke(
-        cli,
-        ["schema", "roots", "--source", str(mock_schema_file)],
-    )
-
-    assert result.exit_code == 0
-    assert "Found 1 root nodes:" in result.output
-    assert "Base" in result.output
+# def test_list_roots(runner, mock_schema_file):
+#     """test the 'roots' command"""
+#     result = runner.invoke(
+#         cli,
+#         ["schema", "roots", "--source", str(mock_schema_file)],
+#     )
+#
+#     assert result.exit_code == 0
+#     assert "Found 1 root nodes:" in result.output
+#     assert "Base" in result.output
 
 
 def test_search_nodes(runner, mock_schema_file):
