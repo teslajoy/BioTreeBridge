@@ -178,3 +178,4 @@ cython_debug/
 .nojekyll
 
 *.json
+!schemas/*.json
