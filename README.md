@@ -1,13 +1,15 @@
 # BioTreeBridge
 
-BioTreeBridge is a data transformation tool that bridges the Human Tumor Atlas Network (HTAN) schema with FHIR healthcare standards. It seamlessly converts data between these two biomedical formats, while the integrated visualization tool renders HTAN's BioThings complex hierarchical structures as navigable tree views to assist in the transformation process.
+BioTreeBridge transforms data between Human Tumor Atlas Network (HTAN) schema and FHIR healthcare standards. It converts biomedical data between these formats and visualizes HTAN's complex hierarchical structures as navigable tree views as a utility for registry mappings and transformers.
 
 ## Features
-- Bidirectional transformation between HTAN bioschemas and FHIR resources
-- Support for mapping tumor atlas data elements to fast healthcare interoperability standards
-- Interactive D3.js-based tree visualization of HTAN schema hierarchy
-- Customizable visualization with focused views on specific branches
-- Python-based data processing ETL pipeline for schema transformation
+This system provides a complete bidirectional mapping between HTAN schema/data and FHIR resources. Key features include:
+
+1. Schema Registry: Maps HTAN entities and fields to FHIR resources with bidirectional field name support
+2. Transformers: Convert between formats with entity-specific logic (ex. Patient transformer)
+3. Schema Enhancement: Exports HTAN schema with FHIR mapping annotations
+4. Bidirectional Conversion: Supports both HTAN → FHIR and FHIR → HTAN
+5. CLI Tools: Command-line utilities for schema exploration and data conversion
 
 ## Installation
 
@@ -26,7 +28,9 @@ pip install -e .
 
 ## Usage
 
-### Downloading the Schema Locally
+### Getting the HTAN Schema
+Having a local instance helps to keep the schema version static 
+
 ```bash
 # download using curl
 curl -s https://raw.githubusercontent.com/ncihtan/data-models/main/HTAN.model.jsonld > schema.json
@@ -35,7 +39,8 @@ curl -s https://raw.githubusercontent.com/ncihtan/data-models/main/HTAN.model.js
 wget -O schema.json https://raw.githubusercontent.com/ncihtan/data-models/main/HTAN.model.jsonld
 ```
 
-### Generate Hierarchy JSON
+### Working with Schema
+#### 1. Generate Hierarchy JSON
 
 Generate a hierarchical representation of the HTAN schema for visualization:
 
@@ -53,7 +58,7 @@ biotreebridge schema tree --parent Assay --max-depth 2
 biotreebridge schema tree --parent Assay --output assay_hierarchy.json
 ```
 
-### Search for Schema Elements
+#### 2. Search for Schema Elements
 
 ```bash
 # search for nodes containing "Assay"
@@ -66,7 +71,7 @@ biotreebridge schema search --source https://raw.githubusercontent.com/ncihtan/d
 biotreebridge schema search --term Imaging --output imaging_nodes.json
 ```
 
-### List All Root Nodes
+#### 3.List All Root Nodes
 
 ```bash
 # list all root nodes
@@ -76,13 +81,54 @@ biotreebridge schema roots
 biotreebridge schema roots --source https://raw.githubusercontent.com/ncihtan/data-models/main/HTAN.model.jsonld
 ```
 
-## Visualization
+#### 4. Schema Visualization
 
 After generating the hierarchy JSON, you can view the visualizations locally via ```python -m http.server 8000``` and your localhost:8000
 
+### Data Transformation 
+
+1. Parse and Load schema 
+2. Register Mappings
+3. Pass register to Transformers 
+4. Transform Data 
+
+example: 
+```python
+from biotreebridge.schema_parser.parser import BioThingsSchemaParser
+from biotreebridge.bridge.registry import SchemaRegistry
+from biotreebridge.bridge.transformer import PatientTransformer # coming soon
+
+parser = BioThingsSchemaParser('schemas/hierarchy.json')
+registry = SchemaRegistry(parser)
+
+registry.register_field("Patient", "HTANParticipantID", "identifier[0].value", {
+    "system": "https://data.humantumoratlas.org/participant",
+    "use": "official"
+})
+registry.register_field("Patient", "Gender", "gender")
+
+patient_transformer = PatientTransformer(registry)
+htan_patient = {
+    "HTAN Participant ID": "HTAN_123",
+    "Gender": "female"
+}
+
+fhir_patient = patient_transformer.transform(htan_patient)
+```
+
+### Architecture
+
+BioTreeBridge has three main components:
+
+1. Schema Parser: Processes HTAN BioThings schema into navigable structures
+2. Schema Registry: Maps between HTAN and FHIR data models
+3. Transformers: Handle conversion with entity-specific logic
+
+The system supports field name variations (camelCase vs. space-separated) and can export enhanced schemas with FHIR mapping annotations for reuse.
+
 
 ## Purpose
-BioTreeBridge facilitates interoperability between HTAN's cancer research and clinical healthcare systems, enabling researchers and clinicians to leverage human tumor atlas data within FHIR standard healthcare workflows while maintaining semantic integrity across systems.
+BioTreeBridge connects HTAN cancer research data with clinical healthcare systems using FHIR standards, enabling seamless data exchange while maintaining semantic integrity.
 
 ## License
 

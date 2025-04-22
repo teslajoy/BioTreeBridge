@@ -18,7 +18,7 @@ def schema_commands():
 @schema_commands.command('tree')
 @click.option('--source', '-s', default='schema.json',
               help='Schema source (URL or file). Default is schema.json.')
-@click.option('--output', '-o', default="hierarchy.json",
+@click.option('--output', '-o', default="schemas/hierarchy.json",
               help='Output JSON file')
 @click.option('--parent', '-p', help='Parent node to start from')
 @click.option('--max-depth', '-d', type=int, default=-1,
