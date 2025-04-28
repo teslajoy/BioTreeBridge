@@ -1,6 +1,7 @@
 import click
 import json
 from biotreebridge.schema_parser.parser import BioThingsSchemaParser
+from biotreebridge.bridge.registry import SchemaRegistry
 
 
 @click.group()
@@ -14,6 +15,61 @@ def schema_commands():
     """schema parsing commands"""
     pass
 
+
+@cli.group('fhir')
+def fhir_commands():
+    """FHIR mapping commands"""
+    pass
+
+@fhir_commands.command('create-mapping-template')
+@click.option('--source', '-s', default='schema.json',
+              help='Schema source. Default is schema.json.')
+@click.option('--output', '-o', default='mappings.json',
+              help='Output mapping template file. Default is mappings.json.')
+@click.option('--verbose', '-v', is_flag=True,
+              help='Enable verbose output.')
+def create_mapping_template(source, output, verbose):
+    """Create a FHIR mapping template from schema"""
+    registry = SchemaRegistry(schema_path=source, verbose=verbose)
+
+    try:
+
+        mappings, range_values = registry.create_mapping_template(output)
+
+        click.echo(f"➜ Created mapping template with {len(mappings)} nodes at {output}")
+        click.echo(f"➜ Excluded {len(range_values)} schema:rangeIncludes values")
+        click.echo("\nNext steps:")
+        click.echo("  1. Edit the mapping template to add FHIR mappings")
+        click.echo(
+            f"  2. Apply the mappings with: biotreebridge fhir apply-mapping --source {source} --mapping {output}")
+    except Exception as e:
+        click.echo(f"Error creating mapping template: {str(e)}", err=True)
+        raise click.Abort()
+
+
+
+@fhir_commands.command('apply-mapping')
+@click.option('--source', '-s', default='schema.json',
+              help='Schema source. Default is schema.json.')
+@click.option('--mapping', '-m', default='mappings.json',
+              help='Mapping template file. Default is mappings.json.')
+@click.option('--output', '-o', default='schema_fhir.json',
+              help='Output schema file with FHIR mappings. Default is schema_fhir.json.')
+@click.option('--verbose', '-v', is_flag=True,
+              help='Enable verbose output.')
+def apply_mapping(source, mapping, output, verbose):
+    """Apply FHIR mappings to schema"""
+    registry = SchemaRegistry(schema_path=source, verbose=verbose)
+
+    try:
+        registry.apply_mapping_template(mapping)
+        registry.save_schema(output)
+
+        click.echo(f"➜ Applied FHIR mappings from {mapping}")
+        click.echo(f"➜ Updated schema saved to {output}")
+    except Exception as e:
+        click.echo(f"Error applying mappings: {str(e)}", err=True)
+        raise click.Abort()
 
 @schema_commands.command('tree')
 @click.option('--source', '-s', default='schema.json',
@@ -89,3 +145,4 @@ def search_nodes(source, term, output):
 
 if __name__ == "__main__":
     cli()
+

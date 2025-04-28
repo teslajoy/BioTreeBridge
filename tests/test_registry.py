@@ -1,179 +1,188 @@
 import os
 import pytest
 import tempfile
-import pandas as pd
-from biotreebridge.schema_parser.parser import BioThingsSchemaParser
+import json
 from biotreebridge.bridge.registry import SchemaRegistry
 
-import importlib.resources
-from pathlib import Path
-
-hierarchy_path = str(Path(importlib.resources.files('biotreebridge').parent / 'hierarchy.json'))
-
 class TestSchemaRegistry:
-    """test suite for SchemaRegistry class"""
+    @pytest.fixture
+    def sample_schema(self):
+        schema = {
+            "@context": {
+                "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+                "schema": "http://schema.org/",
+                "bts": "http://biothinkg.org/schema/"
+            },
+            "@graph": [
+                {
+                    "@id": "Patient",
+                    "rdfs:label": "Patient",
+                    "rdfs:comment": "A person receiving healthcare services"
+                },
+                {
+                    "@id": "HTANParticipantID",
+                    "rdfs:label": "HTAN Participant ID",
+                    "rdfs:comment": "The identifier for a participant in HTAN"
+                },
+                {
+                    "@id": "Gender",
+                    "rdfs:label": "Gender",
+                    "rdfs:comment": "The gender of the patient"
+                },
+                {
+                    "@id": "Biospecimen",
+                    "rdfs:label": "Biospecimen",
+                    "rdfs:comment": "A biological sample"
+                }
+            ]
+        }
+        temp_fd, temp_path = tempfile.mkstemp(suffix='.json')
+        os.close(temp_fd)
+        with open(temp_path, 'w', encoding='utf-8') as f:
+            json.dump(schema, f, indent=2)
+        return temp_path
 
     @pytest.fixture
-    def schema_parser(self):
-        """fixture to create a schema parser"""
-        try:
-            parser = BioThingsSchemaParser(hierarchy_path)
-            return parser
-        except Exception as e:
-            pytest.skip(f"Could not initialize parser: {e}")
-
-    @pytest.fixture
-    def registry(self, schema_parser):
-        """fixture to create a registry with default mappings"""
-        registry = SchemaRegistry(schema_parser)
-        return registry
+    def registry(self, sample_schema):
+        return SchemaRegistry(schema_path=sample_schema, verbose=True)
 
     @pytest.fixture
     def populated_registry(self, registry):
-        """fixture to create a registry with sample mappings"""
-        registry.register_field("Patient", "HTANParticipantID", "identifier[0].value", {
+        registry.add_fhir_property("Patient", "resourceType", "Patient")
+        registry.add_fhir_property("HTANParticipantID", "resourceType", "Patient")
+        registry.add_field_mapping("HTANParticipantID", {
+            "path": "Patient.identifier.value",
             "system": "https://data.humantumoratlas.org/participant",
             "use": "official"
         })
-        registry.register_field("Patient", "Gender", "gender")
-        registry.register_field("Patient", "Race", "extension[0].valueString", {
-            "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race"
+        registry.add_fhir_property("Gender", "resourceType", "Patient")
+        registry.add_field_mapping("Gender", {
+            "path": "Patient.gender"
         })
-        registry.register_field("Patient", "VitalStatus", "deceasedBoolean")
-
-        registry.register_field("Biospecimen", "HTANBiospecimenID", "identifier[0].value", {
-            "system": "https://data.humantumoratlas.org/biospecimen"
-        })
-        registry.register_field("Biospecimen", "BiospecimenType", "type.coding[0].code")
-
+        registry.add_fhir_property("Biospecimen", "resourceType", "Specimen")
         return registry
 
-    def test_register_class(self, registry):
-        """test registering a class mapping"""
-        registry.register_class("Medication", "Medication")
-        assert registry.get_fhir_type("Medication") == "Medication"
+    def test_load_schema(self, registry, sample_schema):
+        assert registry.schema is not None
+        assert "@graph" in registry.schema
+        assert len(registry.schema["@graph"]) == 4
 
-    def test_register_field(self, registry):
-        """test registering a field mapping"""
-        registry.register_field("Patient", "HTANParticipantID", "identifier[0].value")
-        path = registry.get_field_path("Patient", "HTANParticipantID")
-        assert path == "identifier[0].value"
+    def test_add_fhir_property(self, registry):
+        registry.add_fhir_property("Patient", "resourceType", "Patient")
+        property_value = registry.get_fhir_property("Patient", "resourceType")
+        assert property_value == "Patient"
 
-    def test_register_field_with_metadata(self, registry):
-        """test registering a field with metadata"""
-        metadata = {"system": "http://example.org", "use": "official"}
-        registry.register_field("Patient", "HTANParticipantID", "identifier[0].value", metadata)
+    def test_add_field_mapping(self, registry):
+        registry.add_fhir_property("HTANParticipantID", "resourceType", "Patient")
+        registry.add_field_mapping("HTANParticipantID", {
+            "path": "Patient.identifier.value",
+            "system": "https://data.humantumoratlas.org/participant"
+        })
+        mappings = registry.get_field_mappings("HTANParticipantID")
+        assert len(mappings) == 1
+        assert mappings[0]["fhir:path"] == "Patient.identifier.value"
+        assert mappings[0]["fhir:system"] == "https://data.humantumoratlas.org/participant"
 
-        path = registry.get_field_path("Patient", "HTANParticipantID")
-        metadata_result = registry.get_field_metadata("Patient", "HTANParticipantID")
+    def test_remove_fhir_property(self, populated_registry):
+        populated_registry.remove_fhir_property("Patient", "resourceType")
+        property_value = populated_registry.get_fhir_property("Patient", "resourceType")
+        assert property_value is None
 
-        assert path == "identifier[0].value"
-        assert metadata_result == metadata
+    def test_remove_field_mapping(self, populated_registry):
+        populated_registry.remove_field_mapping("HTANParticipantID", "Patient.identifier.value")
+        mappings = populated_registry.get_field_mappings("HTANParticipantID")
+        assert len(mappings) == 0
 
-    def test_field_name_mapping_camel_to_spaced(self, populated_registry):
-        """test mapping between camelCase and space-separated field names"""
-        assert "HTANParticipantID" in populated_registry.field_maps["Patient"]
-        assert populated_registry.field_maps["Patient"]["HTANParticipantID"] == "identifier[0].value"
+    def test_list_fhir_properties(self, populated_registry):
+        properties = populated_registry.list_fhir_properties("Patient")
+        assert "fhir:resourceType" in properties
+        assert properties["fhir:resourceType"] == "Patient"
 
-        path1 = populated_registry.get_field_path("Patient", "HTANParticipantID")
-        path2 = populated_registry.get_field_path("Patient", "HTAN Participant ID")
+    def test_list_all_fhir_mappings(self, populated_registry):
+        all_mappings = populated_registry.list_all_fhir_mappings()
+        assert "fhir:resourceType" in all_mappings
+        assert "Patient" in all_mappings["fhir:resourceType"]
+        assert all_mappings["fhir:resourceType"]["Patient"] == "Patient"
 
-        assert path1 == "identifier[0].value"
-        assert path2 == "identifier[0].value"
-
-        metadata1 = populated_registry.get_field_metadata("Patient", "HTANParticipantID")
-        metadata2 = populated_registry.get_field_metadata("Patient", "HTAN Participant ID")
-
-        expected_metadata = {"system": "https://data.humantumoratlas.org/participant", "use": "official"}
-        assert metadata1 == expected_metadata
-        assert metadata2 == expected_metadata
-
-    def test_get_fhir_type(self, registry):
-        """test getting FHIR resource type"""
-        assert registry.get_fhir_type("Patient") == "Patient"
-        assert registry.get_fhir_type("NonExistentClass") is None
-
-
-    def test_export_and_load_schema(self, populated_registry):
-        """test exporting and loading a schema with mappings"""
-        with tempfile.NamedTemporaryFile(suffix='.json', delete=False) as tmp:
-            temp_schema_path = tmp.name
-
+    def test_create_mapping_template(self, registry):
+        temp_fd, mapping_path = tempfile.mkstemp(suffix='.json')
+        os.close(temp_fd)
         try:
-            populated_registry.export_schema_with_fhir_paths(temp_schema_path)
-            new_registry = SchemaRegistry(populated_registry.parser)
-            result = new_registry.load_mapping_schema(temp_schema_path)
-            assert result is True
-
-            path = new_registry.get_field_path("Patient", "HTAN Participant ID")
-            metadata = new_registry.get_field_metadata("Patient", "HTAN Participant ID")
-            assert path == "identifier[0].value"
-            assert metadata == {"system": "https://data.humantumoratlas.org/participant", "use": "official"}
-
-            path_camel = new_registry.get_field_path("Patient", "HTANParticipantID")
-            assert path_camel == "identifier[0].value"
-
+            mappings, range_values = registry.create_mapping_template(mapping_path)
+            assert len(mappings) == 4
+            assert len(range_values) == 0
+            with open(mapping_path, 'r', encoding='utf-8') as f:
+                loaded_mappings = json.load(f)
+            assert len(loaded_mappings) == 4
+            assert loaded_mappings[0]["node"] in ["Patient", "HTANParticipantID", "Gender", "Biospecimen"]
+            assert "fhir:resourceType" in loaded_mappings[0]
+            assert "fhir:reference" in loaded_mappings[0]
+            assert "fhir:validation" in loaded_mappings[0]
+            assert "fhir:fieldMapping" in loaded_mappings[0]
         finally:
-            if os.path.exists(temp_schema_path):
-                os.unlink(temp_schema_path)
+            if os.path.exists(mapping_path):
+                os.unlink(mapping_path)
 
-    def test_data_processing(self, populated_registry):
-        """test processing HTAN data with field mappings"""
-        patient_data = {
-            "HTAN Participant ID": ["HTAN_123", "HTAN_456"],
-            "Gender": ["male", "female"],
-            "Race": ["White", "Asian"],
-            "Vital Status": ["Alive", "Dead"]
-        }
-        patient_df = pd.DataFrame(patient_data)
+    def test_apply_mapping_template(self, registry):
+        temp_fd, mapping_path = tempfile.mkstemp(suffix='.json')
+        os.close(temp_fd)
+        try:
+            mapping_content = [
+                {
+                    "node": "Patient",
+                    "fhir:resourceType": "Patient",
+                    "fhir:reference": [],
+                    "fhir:validation": [],
+                    "fhir:fieldMapping": [],
+                    "rdfs:subClassOf": "",
+                    "fhir:schema_subClassOf": "",
+                    "range_values": []
+                },
+                {
+                    "node": "HTANParticipantID",
+                    "fhir:resourceType": "Patient",
+                    "fhir:reference": [],
+                    "fhir:validation": [],
+                    "fhir:fieldMapping": [{"fhir:path": "Patient.identifier.value"}],
+                    "rdfs:subClassOf": "",
+                    "fhir:schema_subClassOf": "",
+                    "range_values": []
+                }
+            ]
+            with open(mapping_path, 'w', encoding='utf-8') as f:
+                json.dump(mapping_content, f, indent=2)
+            registry.apply_mapping_template(mapping_path)
+            patient_resource_type = registry.get_fhir_property("Patient", "resourceType")
+            assert patient_resource_type == "Patient"
+            htan_id_resource_type = registry.get_fhir_property("HTANParticipantID", "resourceType")
+            assert htan_id_resource_type == "Patient"
+            field_mappings = registry.get_field_mappings("HTANParticipantID")
+            assert len(field_mappings) == 1
+            assert field_mappings[0]["fhir:path"] == "Patient.identifier.value"
+        finally:
+            if os.path.exists(mapping_path):
+                os.unlink(mapping_path)
 
-        results = []
-        for _, row in patient_df.iterrows():
-            fhir_resource = {"resourceType": populated_registry.get_fhir_type("Patient")}
+    def test_save_schema(self, populated_registry):
+        temp_fd, output_path = tempfile.mkstemp(suffix='.json')
+        os.close(temp_fd)
+        try:
+            populated_registry.save_schema(output_path)
+            with open(output_path, 'r', encoding='utf-8') as f:
+                saved_schema = json.load(f)
+            assert "@graph" in saved_schema
+            assert len(saved_schema["@graph"]) == 4
+            patient_node = None
+            for node in saved_schema["@graph"]:
+                if node["@id"] == "Patient":
+                    patient_node = node
+                    break
+            assert patient_node is not None
+            assert "fhir:resourceType" in patient_node
+            assert patient_node["fhir:resourceType"] == "Patient"
+        finally:
+            if os.path.exists(output_path):
+                os.unlink(output_path)
 
-            for field, value in row.items():
-                path = populated_registry.get_field_path("Patient", field)
-                metadata = populated_registry.get_field_metadata("Patient", field)
-
-                if path:
-                    if "identifier" in path:
-                        if "identifier" not in fhir_resource:
-                            fhir_resource["identifier"] = []
-
-                        identifier = {"value": value}
-                        if metadata:
-                            for meta_key, meta_value in metadata.items():
-                                identifier[meta_key] = meta_value
-                        fhir_resource["identifier"].append(identifier)
-
-                    elif "extension" in path:
-                        if "extension" not in fhir_resource:
-                            fhir_resource["extension"] = []
-
-                        extension = {"valueString": value}
-                        if metadata and "url" in metadata:
-                            extension["url"] = metadata["url"]
-
-                        fhir_resource["extension"].append(extension)
-                    else:
-                        fhir_resource[path] = value
-
-            results.append(fhir_resource)
-
-        assert len(results) == 2
-
-        assert results[0]["resourceType"] == "Patient"
-        assert results[0]["identifier"][0]["value"] == "HTAN_123"
-        assert results[0]["identifier"][0]["system"] == "https://data.humantumoratlas.org/participant"
-        assert results[0]["identifier"][0]["use"] == "official"
-        assert results[0]["gender"] == "male"
-        assert results[0]["extension"][0]["valueString"] == "White"
-        assert results[0]["extension"][0]["url"] == "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race"
-
-        assert results[1]["resourceType"] == "Patient"
-        assert results[1]["identifier"][0]["value"] == "HTAN_456"
-        assert results[1]["identifier"][0]["system"] == "https://data.humantumoratlas.org/participant"
-        assert results[1]["identifier"][0]["use"] == "official"
-        assert results[1]["gender"] == "female"
-        assert results[1]["extension"][0]["valueString"] == "Asian"
-        assert results[1]["extension"][0]["url"] == "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race"
+    def teardown_method(self, method):
+        pass

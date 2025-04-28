@@ -39,7 +39,7 @@ curl -s https://raw.githubusercontent.com/ncihtan/data-models/main/HTAN.model.js
 wget -O schema.json https://raw.githubusercontent.com/ncihtan/data-models/main/HTAN.model.jsonld
 ```
 
-### Working with Schema
+### Working with Schema 
 #### 1. Generate Hierarchy JSON
 
 Generate a hierarchical representation of the HTAN schema for visualization:
@@ -73,7 +73,7 @@ biotreebridge schema search --term Imaging --output imaging_nodes.json
 
 #### 3.List All Root Nodes
 
-```bash
+```bash # todo: fix root fetching
 # list all root nodes
 biotreebridge schema roots
 
@@ -85,36 +85,50 @@ biotreebridge schema roots --source https://raw.githubusercontent.com/ncihtan/da
 
 After generating the hierarchy JSON, you can view the visualizations locally via ```python -m http.server 8000``` and your localhost:8000
 
+### FHIR to HTAN mapping 
+```bash
+# create mapping template
+biotreebridge fhir create-mapping-template
+
+# apply mapping to schema
+biotreebridge fhir apply-mapping
+
+# add a single mapping
+biotreebridge fhir add-mapping --node "Assay" --property "resourceType" --value "ServiceRequest"
+```
+
+#### Programmatic Use: 
+```python 
+from biotreebridge.bridge.registry import SchemaRegistry
+
+# 1. load HTAN schema and create registry
+registry = SchemaRegistry("schema.json")
+
+# 2. create mapping template
+registry.create_mapping_template("mappings.json")
+
+# 3. manually edit the mapping template to add FHIR mappings
+
+# 4. apply mapping template
+registry.apply_mapping_template("mappings.json")
+
+# 5. add FHIR properties directly
+registry.add_fhir_property("Patient", "resourceType", "Patient")
+registry.add_field_mapping("HTANParticipantID", {
+    "path": "Patient.identifier.value",
+    "system": "https://data.humantumoratlas.org/participant"
+})
+
+# 6. save updated HTAN schema with FHIR mappings 
+registry.save_schema("schema_fhir.json")
+```
+
 ### Data Transformation 
 
-1. Parse and Load schema 
-2. Register Mappings
-3. Pass register to Transformers 
-4. Transform Data 
-
-example: 
-```python
-from biotreebridge.schema_parser.parser import BioThingsSchemaParser
-from biotreebridge.bridge.registry import SchemaRegistry
-from biotreebridge.bridge.transformer import PatientTransformer # coming soon
-
-parser = BioThingsSchemaParser('schemas/hierarchy.json')
-registry = SchemaRegistry(parser)
-
-registry.register_field("Patient", "HTANParticipantID", "identifier[0].value", {
-    "system": "https://data.humantumoratlas.org/participant",
-    "use": "official"
-})
-registry.register_field("Patient", "Gender", "gender")
-
-patient_transformer = PatientTransformer(registry)
-htan_patient = {
-    "HTAN Participant ID": "HTAN_123",
-    "Gender": "female"
-}
-
-fhir_patient = patient_transformer.transform(htan_patient)
-```
+1. Parse and load schema 
+2. Register mappings
+3. Pass updated bidirectional schema mapping to Transformers 
+4. Transform data
 
 ### Architecture
 
