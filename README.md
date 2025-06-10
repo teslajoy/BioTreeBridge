@@ -1,4 +1,4 @@
-# BioTreeBridge
+⚠️ Note: This is the public skeleton version of the full project. 
 
 BioTreeBridge transforms data between Human Tumor Atlas Network (HTAN) schema and FHIR healthcare standards. It converts biomedical data between these formats and visualizes HTAN's complex hierarchical structures as navigable tree views as a utility for registry mappings and transformers.
 
